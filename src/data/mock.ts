@@ -169,31 +169,34 @@ function generateCohorts(months = 12): SubscriberCohort[] {
   });
 }
 
-function generateChurnReasons(totalChurned: number): ChurnReason[] {
-  const blueprint: Array<{ reason: string; percentage: number }> = [
-    { reason: 'Low content relevance', percentage: 27 },
-    { reason: 'Posting cadence inconsistency', percentage: 18 },
-    { reason: 'Price sensitivity', percentage: 16 },
-    { reason: 'Competitor migration', percentage: 14 },
-    { reason: 'Ad load dissatisfaction', percentage: 11 },
-    { reason: 'UX friction', percentage: 8 },
-    { reason: 'Other', percentage: 6 },
-  ];
+const churnReasonBlueprint: Array<{ reason: string; weight: number }> = [
+  { reason: 'Low content relevance', weight: 27 },
+  { reason: 'Posting cadence inconsistency', weight: 18 },
+  { reason: 'Price sensitivity', weight: 16 },
+  { reason: 'Competitor migration', weight: 14 },
+  { reason: 'Ad load dissatisfaction', weight: 11 },
+  { reason: 'UX friction', weight: 8 },
+  { reason: 'Other', weight: 6 },
+];
 
-  return blueprint.map((item) => ({
-    reason: item.reason,
-    percentage: item.percentage,
-    affectedSubscribers: Math.round((item.percentage / 100) * totalChurned),
-  }));
+function generateChurnReasonsFromWeights(totalChurned: number, weights: number[]): ChurnReason[] {
+  const weightSum = weights.reduce((sum, weight) => sum + weight, 0);
+
+  return churnReasonBlueprint.map((item, idx) => {
+    const normalizedShare = weights[idx] / Math.max(weightSum, 1);
+    return {
+      reason: item.reason,
+      percentage: round(normalizedShare * 100, 1),
+      affectedSubscribers: Math.round(normalizedShare * totalChurned),
+    };
+  });
 }
 
 export const subscriberTimeline = generateSubscriberTimeline(180);
 export const contentMetrics = generateContentMetrics(72);
 export const revenueTimeline = generateRevenueTimeline(subscriberTimeline, contentMetrics);
 export const subscriberCohorts = generateCohorts(12);
-export const churnReasons = generateChurnReasons(
-  subscriberTimeline.reduce((sum, point) => sum + point.churnedSubscribers, 0),
-);
+export const churnReasons = getChurnReasonsForRange();
 
 export function filterByDateRange<T extends { date: string }>(
   items: T[],
@@ -206,6 +209,44 @@ export function filterByDateRange<T extends { date: string }>(
     const date = new Date(item.date);
     return date >= start && date <= end;
   });
+}
+
+export function getChurnReasonsForRange(range?: DateRange): ChurnReason[] {
+  const subs = range ? filterByDateRange(subscriberTimeline, range) : subscriberTimeline;
+  const totalChurned = subs.reduce((sum, point) => sum + point.churnedSubscribers, 0);
+
+  if (!subs.length || totalChurned <= 0) {
+    return generateChurnReasonsFromWeights(0, churnReasonBlueprint.map((item) => item.weight));
+  }
+
+  const avgChurnRate =
+    subs.reduce((sum, point) => sum + point.churnRate, 0) / Math.max(subs.length, 1);
+  const latestChurnRate = subs[subs.length - 1]?.churnRate ?? avgChurnRate;
+
+  const adjustedWeights = churnReasonBlueprint.map((item) => {
+    if (item.reason === 'Low content relevance') {
+      return item.weight * (1 + clamp((avgChurnRate - 0.23) * 0.9, -0.12, 0.2));
+    }
+    if (item.reason === 'Posting cadence inconsistency') {
+      return item.weight * (1 + (subs.length < 21 ? 0.1 : -0.03));
+    }
+    if (item.reason === 'Price sensitivity') {
+      return item.weight * (1 + clamp((30 - subs.length) / 130, -0.06, 0.12));
+    }
+    if (item.reason === 'Competitor migration') {
+      return item.weight * (1 + clamp((latestChurnRate - avgChurnRate) * 3.5, -0.1, 0.1));
+    }
+    if (item.reason === 'Ad load dissatisfaction') {
+      return item.weight * (1 + clamp((avgChurnRate - 0.2) * 0.7, -0.08, 0.12));
+    }
+    if (item.reason === 'UX friction') {
+      return item.weight * (1 + clamp((21 - subs.length) / 120, -0.05, 0.08));
+    }
+
+    return item.weight;
+  });
+
+  return generateChurnReasonsFromWeights(totalChurned, adjustedWeights);
 }
 
 export function getOverviewKPIs(range?: DateRange): OverviewKPIs {

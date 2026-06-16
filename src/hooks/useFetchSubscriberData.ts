@@ -3,8 +3,8 @@
 import { useQuery } from '@tanstack/react-query';
 
 import {
-  churnReasons,
   filterByDateRange,
+  getChurnReasonsForRange,
   getOverviewKPIs,
   subscriberCohorts,
   subscriberTimeline,
@@ -16,7 +16,7 @@ const SIMULATED_LATENCY_MS = 120;
 export interface SubscriberDataResult {
   timeline: typeof subscriberTimeline;
   cohorts: typeof subscriberCohorts;
-  churnReasons: typeof churnReasons;
+  churnReasons: ReturnType<typeof getChurnReasonsForRange>;
   overview: ReturnType<typeof getOverviewKPIs>;
 }
 
@@ -33,6 +33,7 @@ export function useFetchSubscriberData() {
     queryKey: ['subscribers', dateRange.start, dateRange.end],
     queryFn: async () => {
       const timeline = filterByDateRange(subscriberTimeline, dateRange);
+      const churnReasons = getChurnReasonsForRange(dateRange);
       const overview = getOverviewKPIs(dateRange);
 
       return delay({

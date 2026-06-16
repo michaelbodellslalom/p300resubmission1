@@ -4,7 +4,7 @@
 **Phase 3: Overview Charts** 🚧 IN PROGRESS
 
 ## Next Task
-**T-043: Wire churn table data behavior to date range states and continue chart layout polish (T-045)**
+**T-045: Responsive layout refinement for chart and table sections**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -46,13 +46,13 @@
 - T-039 complete: chart legend added for Revenue and RPM series
 - T-041 complete: Churn Breakdown table added to Overview
 - T-042 complete: churn table sorting added for reason, share, and affected subscribers
+- T-043 complete: churn breakdown values now recompute from selected date range
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-043 follow-up: align churn table behavior with range-specific data snapshots
 - T-045 planning: chart/table responsive layout refinement for smaller screens
 
 ## Blockers
@@ -66,4 +66,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-041/T-042 complete, churn table and sorting shipped
+June 16, 2026 - T-043 complete, churn table now range-aware
