@@ -24,6 +24,21 @@
   button {
     @apply transition-colors duration-200;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .animate-pulse {
+      animation: none !important;
+    }
+  }
 }
 
 @layer components {
