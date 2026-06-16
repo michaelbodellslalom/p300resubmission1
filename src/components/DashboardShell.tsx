@@ -19,6 +19,7 @@ function tabFromPath(pathname: string): DashboardTab {
   if (pathname.startsWith('/dashboard/revenue')) return 'revenue';
   if (pathname.startsWith('/dashboard/reports')) return 'reports';
   if (pathname.startsWith('/dashboard/insights')) return 'insights';
+  if (pathname.startsWith('/dashboard/recommendations')) return 'recommendations';
   return 'overview';
 }
 

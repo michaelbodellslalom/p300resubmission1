@@ -18,6 +18,7 @@ const tabs: Array<{ key: DashboardTab; label: string; href: string }> = [
   { key: 'revenue', label: 'Revenue', href: '/dashboard/revenue' },
   { key: 'reports', label: 'Reports', href: '/dashboard/reports' },
   { key: 'insights', label: 'Insights', href: '/dashboard/insights' },
+  { key: 'recommendations', label: 'Recommendations', href: '/dashboard/recommendations' },
 ];
 
 export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {

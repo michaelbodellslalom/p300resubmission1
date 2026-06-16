@@ -6,7 +6,8 @@ export type DashboardTab =
   | 'content'
   | 'revenue'
   | 'reports'
-  | 'insights';
+  | 'insights'
+  | 'recommendations';
 
 export type ContentType =
   | 'tutorial'
