@@ -9,8 +9,8 @@ Planning complete | Development in progress
 |-------|--------|-------|-------|
 | 0 - Scaffolding | In Progress | T-001-T-014 | T-012 now complete |
 | 1 - Header & Nav | Complete | T-015-T-022 | Dashboard shell, tabs, and date controls are live |
-| 2 - Overview KPIs | In Progress | T-023-T-034 | KPI component, wiring, loading/error, responsive and style polish complete |
-| 3 - Overview Charts | Not Started | T-035-T-050 | Blocked by Phase 2 |
+| 2 - Overview KPIs | Complete | T-023-T-034 | KPI component, wiring, loading/error, responsive and style polish complete |
+| 3 - Overview Charts | In Progress | T-035-T-050 | Subscriber trend chart and tooltip shipped (T-035/T-036) |
 | 4 - Subscribers Tab | Not Started | T-051-T-068 | Blocked by Phase 1 |
 | 5 - Content Tab | Not Started | T-069-T-088 | Blocked by Phase 1 |
 | 6 - Revenue Tab | Not Started | T-089-T-104 | Blocked by Phase 1 |
@@ -48,9 +48,15 @@ Planning complete | Development in progress
 - Polished KPI card sizing and grid behavior across mobile/tablet/desktop breakpoints
 - Added tone-aware KPI card visual accents and refined hover elevation
 - Validated KPI trend indicators in positive and negative contexts
+- Completed KPI responsiveness QA pass for desktop and mobile behavior
+- Added SubscriberTrendChart component to Overview with loading/error/empty handling
+- Added formatted hover tooltip for subscriber trend chart
+- Fixed refresh timestamp click interception with pointer-events-safe label styling
+- Fixed header hydration mismatch for dynamic "Updated" timestamp text
+- Re-validated type-check and production build after chart integration
 
 ## In Progress
-- Next: T-034 (final KPI QA pass before chart implementation)
+- Next: T-037/T-038 (subscriber chart date-range validation, then revenue trend chart)
 
 ## Risks and Notes
 - No blockers currently
@@ -63,3 +69,4 @@ Planning complete | Development in progress
 - Typed mock data and Zustand store (T-007/T-008)
 - Data hooks and API routes (T-009-T-012)
 - Dashboard shell and navigation (T-015-T-022)
+- KPI implementation and visual polish through T-033

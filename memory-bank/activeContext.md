@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 2: Overview KPIs** 🚧 IN PROGRESS
+**Phase 3: Overview Charts** 🚧 IN PROGRESS
 
 ## Next Task
-**T-034: Final Phase 2 KPI QA pass before charts**
+**T-037: Validate subscriber chart wiring to date range + begin revenue trend chart (T-038)**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -38,12 +38,17 @@
 - T-031 complete: responsive KPI grid/card layout validated and polished
 - T-032 complete: KPI visual style and hover polish pass applied
 - T-033 complete: trend indicator behavior validated in KPI cards
+- T-034 complete: final KPI responsiveness QA pass completed (desktop + mobile checks)
+- T-035 complete: Subscriber Trend Chart component added to Overview
+- T-036 complete: chart hover tooltip with formatted values and date labels added
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
- - Production build and type-check verified after KPI refactor
+- Production build and type-check verified after KPI refactor
+- Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- Preparing final KPI QA pass before Phase 3 charts
+- T-037 follow-up validation for date-range behavior on chart
+- T-038 planning: revenue trend dual-axis chart implementation
 
 ## Blockers
 None
@@ -53,6 +58,7 @@ None
 - Public access for MVP (no auth)
 - Multi-tab dashboard architecture retained
 - Real-time polling remains planned for later phase
+- Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-032/T-033 complete, ready for T-034
+June 16, 2026 - T-034/T-035/T-036 complete, advancing Phase 3

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { useQueryClient } from '@tanstack/react-query';
 
@@ -13,6 +13,7 @@ function formatLastUpdated(isoDate: string): string {
 }
 
 export function Header() {
+  const [isMounted, setIsMounted] = useState(false);
   const queryClient = useQueryClient();
   const dateRange = useDashboardStore((state) => state.dateRange);
   const setDateRange = useDashboardStore((state) => state.setDateRange);
@@ -22,9 +23,14 @@ export function Header() {
   const markUpdated = useDashboardStore((state) => state.markUpdated);
 
   const refreshLabel = useMemo(() => {
+    if (!isMounted) return 'Updated --:--';
     if (isRefreshing) return 'Refreshing...';
     return `Updated ${formatLastUpdated(lastUpdatedAt)}`;
-  }, [isRefreshing, lastUpdatedAt]);
+  }, [isMounted, isRefreshing, lastUpdatedAt]);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleRefresh = async () => {
     markRefreshing(true);
@@ -50,7 +56,9 @@ export function Header() {
             >
               {isRefreshing ? 'Refreshing' : 'Refresh'}
             </button>
-            <span className="text-xs text-slate-400">{refreshLabel}</span>
+            <span suppressHydrationWarning className="pointer-events-none text-xs text-slate-400">
+              {refreshLabel}
+            </span>
           </div>
 
           <DateRangeFilter dateRange={dateRange} onChange={setDateRange} />

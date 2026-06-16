@@ -2,6 +2,7 @@
 
 import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
+import { SubscriberTrendChart } from '@/components/SubscriberTrendChart';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
 
@@ -101,6 +102,17 @@ export default function OverviewPage() {
           tone="neutral"
           helperText="Cross-format engagement average"
           isLoading={loadingSubscribers || !overview}
+        />
+      </section>
+
+      <section>
+        <SubscriberTrendChart
+          data={subscriberData?.timeline ?? []}
+          isLoading={loadingSubscribers}
+          isError={isSubscriberError}
+          onRetry={() => {
+            void refetchSubscribers();
+          }}
         />
       </section>
     </div>
