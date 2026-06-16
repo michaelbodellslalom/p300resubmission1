@@ -4,55 +4,30 @@
 **Phase 0: Project Scaffolding & Setup**
 
 ## Next Task
-**T-001: Initialize Next.js app with TypeScript, ESLint, Tailwind**
+**T-009: Create custom hook useFetchSubscriberData**
 
 ## What's Done
+- Planning complete (PRD, Design Doc, Build Task List)
+- Memory bank scaffolding complete
+- Git repository initialized
+- Next.js app initialized with TypeScript and Tailwind
+- Core dependencies installed (MUI, Recharts, Zustand, React Query)
+- Base app structure created
+- T-007 complete: robust mock data seed added with typed models and selectors
+- T-008 complete: Zustand dashboard store added for tabs, filters, date range, and refresh state
+- Production build verified after T-007
 
 ## What's In Progress
+- Preparing T-009 implementation
 
 ## Blockers
 None
 
 ## Notes
+- Data source is mock only for MVP
+- Public access for MVP (no auth)
+- Multi-tab dashboard architecture retained
+- Real-time polling remains planned for later phase
 
 ## Last Updated
-June 16, 2026 - Project planning complete
-
-# Active Context: Current Work State
-
-## Current Phase
-**Phase 0: Project Scaffolding & Setup** ✅ COMPLETE
-
-## Next Task
-**T-007: Create mock data seed file**
-
-## What's Done
-- ✅ Planning complete (PRD, Design Doc, Build Task List)
-- ✅ Memory bank scaffolding complete
-- ✅ Git repository initialized
-- ✅ Next.js 14 + React 18 initialized with TypeScript
-- ✅ Tailwind CSS configured with dark theme
-- ✅ MUI, Recharts, Zustand, React Query installed
-- ✅ Project structure created (src/components, src/hooks, src/store, etc.)
-- ✅ Initial app pages and layout created
-- ✅ Environment variables configured (.env.local)
-- ✅ npm scripts ready (dev, build, start, lint, test)
-- ✅ Commits made with task IDs and descriptions
-
-## What's In Progress
-- 🔄 T-007: Create mock data seed file
-
-## Blockers
-None
-
-## Notes
-- Using dummy/mock data for MVP (no real APIs)
-- Public access (no authentication)
-- Dark theme with cyan (#0891B2) palette
-- Multi-tab layout (Overview, Subscribers, Content, Revenue, Reports)
-- Full mobile functionality required
-- Real-time polling every 30-60 seconds
-- Dev server ready: npm run dev
-
-## Last Updated
-June 16, 2026 - Phase 0 complete, dev environment ready
+June 16, 2026 - T-008 complete, ready for T-009
