@@ -1,70 +1,83 @@
 # BRIEF: Media & Comms Corp Operations Dashboard
 
-## What We're Building
-A real-time operational dashboard for content strategists and audience insights managers at media & communications organizations. 
+## What This Project Is
 
-## Why It Matters
-Content teams need one unified place to answer critical questions:
-- Is my content working? (views, engagement)
-- What's driving subscriptions? (which content/format)
-- Why are people leaving? (churn analysis)
-- Where's the ad revenue coming from? (revenue drivers)
+A dark-theme operational dashboard for media and communications teams that consolidates subscriber, content, and revenue analytics into a single decision surface.
 
-Today, this data is scattered across multiple tools. **We're bringing it together.**
+## Problem
 
-## Core Audience
-- **Content Strategists** — Decide what content to create and prioritize
-- **Audience Insights Managers** — Analyze trends, report findings, quantify impact
+Operational decisions are slowed by fragmented analytics views. Teams need one place to answer:
 
-## Key Features
-1. **Subscriber Health** — Track growth, churn, cohorts, lifetime value
-2. **Content Performance** — Views, engagement, format breakdown, subscriptions attributed
-3. **Revenue Tracking** — Ad revenue trends, RPM by format, revenue drivers
-4. **Correlation Analysis** — Which content drives subscriptions & revenue
-5. **Real-Time Updates** — Auto-refresh every 30-60 seconds
-6. **Flexible Filtering** — 7 days, 30 days, 90 days, or custom date ranges
-7. **Export & Share** — PDF reports, CSV exports, shareable links
-8. **Full Mobile Support** — Works everywhere (desktop, tablet, phone)
+- What is happening with subscriber growth and churn?
+- Which content formats are helping or hurting outcomes?
+- How is revenue trending and where should monetization focus next?
+- What should we do this week based on current data?
 
-## Design Philosophy
-- **Bold & Creative** — Premium feel with dark theme
-- **Cyan/Blue Palette** — Conveys trust and growth
-- **Data is the Hero** — UI stays out of the way
-- **Interactive & Responsive** — D3-style interactions, full mobile functionality
+## Target Users
 
-## Technology
-- **Frontend:** Next.js 14 + React 18
-- **UI:** Material-UI + Tailwind CSS
-- **Charts:** Recharts + D3
-- **State:** Zustand + React Query
-- **Data:** Mock/dummy data (MVP)
-- **Host:** Vercel
+- Content Strategists
+- Audience Insights Managers
+- Revenue Operations stakeholders
 
-## Success = 
-✅ Dashboard loads in <2 seconds  
-✅ Users answer a question in <3 clicks  
-✅ Exports generate in <5 seconds  
-✅ Works on all devices with sophisticated interactions  
-✅ WCAG 2.1 Level AA accessible  
-✅ >85% test coverage  
-✅ Lighthouse score >90  
+## Current MVP Scope (Implemented)
 
-## Timeline
-**~3-4 weeks** for MVP (Phases 0-14)
+1. Multi-tab dashboard experience:
+- Overview
+- Subscribers
+- Content
+- Revenue
+- Insights
+- Reports
+- Recommendations
 
-## What's NOT Included (MVP)
-❌ User authentication  
-❌ Real data sources (mock data only)  
-❌ Anomaly detection / alerting  
-❌ Predictive forecasting  
-❌ Custom dashboards  
-❌ Third-party integrations  
+2. Core analytics capabilities:
+- Subscriber and revenue KPIs
+- Trend charts and sortable analysis tables
+- Content and revenue format-level breakdowns
+- Action-oriented recommendations derived from current metrics
 
-## Next Steps
-1. Initialize Next.js app (T-001)
-2. Set up directory structure (T-002)
-3. Create mock data (T-007)
-4. Build header & navigation (T-015-T-022)
-5. Implement tabs and pages (T-023+)
+3. Operational support capabilities:
+- Date-range and content-format filtering
+- CSV exports from Reports
+- Session-level performance monitoring surface
 
-**Let's build something great!** 🚀
+4. Quality and platform requirements:
+- Responsive mobile/tablet/desktop behavior
+- Accessibility-focused interaction patterns
+- Automated test suite plus CI verification
+
+## Product Direction
+
+- Data is primary; UI supports rapid interpretation and action
+- Recommendation cards convert insight into clear owner/action/horizon guidance
+- Performance and accessibility are treated as release quality gates, not post-launch work
+
+## Technical Baseline
+
+- Next.js App Router + React + TypeScript
+- Zustand for dashboard state
+- TanStack Query for data fetching/caching
+- Recharts for visualization
+- Tailwind for styling
+- Mock data services for MVP
+
+## Success Criteria
+
+- Dashboard routes are stable and build successfully
+- Core analysis flows work on mobile and desktop
+- Users can export operational data via CSV
+- Teams can identify immediate actions via Recommendations tab
+- Test suite, type-check, and production build all pass
+
+## Out of Scope for Current MVP
+
+- Authentication and user roles
+- Real production data integrations
+- Scheduled email automation and PDF report generation
+- Predictive/anomaly analytics
+
+## Current Stage
+
+- Testing tranche complete through T-180
+- Documentation tranche in progress (T-181 complete, T-182 complete)
+- Remaining launch-path work: final docs and deployment tasks

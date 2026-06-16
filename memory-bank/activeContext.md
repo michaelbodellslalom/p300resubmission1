@@ -4,7 +4,7 @@
 **Phase 13 Documentation & Final Polish** — Launch-path documentation tranche started
 
 ## Next Task
-**T-181: Write comprehensive README.md**
+**T-190: Final visual review + polish**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -92,13 +92,20 @@
 - T-178 complete: GitHub Actions CI workflow added for test/type-check/build verification
 - T-179 complete: full test suite run and validated (all green)
 - T-180 complete: test robustness/coverage pass expanded to recommendations and reports export flows with full validation rerun
+- T-181 complete: README rewritten to accurately document implemented tabs, workflows, test strategy, and CI quality gates
+- T-182 complete: BRIEF refreshed to align with delivered MVP scope, users, success criteria, and launch-stage status
+- T-183 complete: MIT LICENSE verified present at repository root
+- T-184 complete: root CONTRIBUTING guide added with setup, quality gates, testing guidance, and PR checklist
+- T-185 complete: API route contracts documented for subscribers/content/revenue endpoints in docs/API_ROUTES.md and linked from README
+- T-187 complete: deployment runbook created with validation gates, Vercel flow, post-deploy checks, and rollback steps
+- T-188 complete: root CHANGELOG added capturing recommendations feature, testing expansion, CI, and documentation milestones
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-181 planning: README content refresh for launch-path documentation requirements
+- T-190 planning: final visual QA and polish sweep before deployment tranche
 
 ## Blockers
 None
@@ -114,4 +121,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-180 complete; next T-181 comprehensive README refresh
+June 16, 2026 - T-188 complete; next T-190 final visual review
