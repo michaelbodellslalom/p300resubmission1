@@ -4,7 +4,7 @@
 **Phase 3: Overview Charts** 🚧 IN PROGRESS
 
 ## Next Task
-**T-037: Validate subscriber chart wiring to date range + begin revenue trend chart (T-038)**
+**T-040: Wire Revenue chart behavior to date range edge cases and begin churn table (T-041)**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -41,14 +41,17 @@
 - T-034 complete: final KPI responsiveness QA pass completed (desktop + mobile checks)
 - T-035 complete: Subscriber Trend Chart component added to Overview
 - T-036 complete: chart hover tooltip with formatted values and date labels added
+- T-037 complete: date range interaction verified for subscriber and revenue chart updates
+- T-038 complete: dual-axis Revenue Trend chart added to Overview
+- T-039 complete: chart legend added for Revenue and RPM series
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-037 follow-up validation for date-range behavior on chart
-- T-038 planning: revenue trend dual-axis chart implementation
+- T-040 follow-up validation for revenue trend behavior and label ranges
+- T-041 planning: churn breakdown table for Overview
 
 ## Blockers
 None
@@ -61,4 +64,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-034/T-035/T-036 complete, advancing Phase 3
+June 16, 2026 - T-037/T-038/T-039 complete, advancing Overview charts

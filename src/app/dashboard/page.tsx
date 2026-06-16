@@ -2,6 +2,7 @@
 
 import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
+import { RevenueTrendChart } from '@/components/RevenueTrendChart';
 import { SubscriberTrendChart } from '@/components/SubscriberTrendChart';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
@@ -105,13 +106,22 @@ export default function OverviewPage() {
         />
       </section>
 
-      <section>
+      <section className="grid grid-cols-1 gap-4 xl:grid-cols-2">
         <SubscriberTrendChart
           data={subscriberData?.timeline ?? []}
           isLoading={loadingSubscribers}
           isError={isSubscriberError}
           onRetry={() => {
             void refetchSubscribers();
+          }}
+        />
+
+        <RevenueTrendChart
+          data={revenueData?.timeline ?? []}
+          isLoading={loadingRevenue}
+          isError={isRevenueError}
+          onRetry={() => {
+            void refetchRevenue();
           }}
         />
       </section>
