@@ -36,9 +36,10 @@ export function DashboardShell({ children }: DashboardShellProps) {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
+      <a href="#dashboard-main" className="skip-link">Skip to main content</a>
       <Header />
       <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className="px-3 py-4 sm:px-4 sm:py-5 md:px-8 md:py-8">{children}</main>
+      <main id="dashboard-main" className="px-3 py-4 sm:px-4 sm:py-5 md:px-8 md:py-8">{children}</main>
     </div>
   );
 }

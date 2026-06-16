@@ -53,6 +53,7 @@ export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
                 <Link
                   href={tab.href}
                   onClick={() => handleTabClick(tab.key)}
+                  aria-current={isActive ? 'page' : undefined}
                   className={
                     isActive
                       ? 'block rounded-md border border-cyan-500/50 bg-cyan-500/15 px-3 py-2 text-sm font-semibold text-cyan-300'
@@ -76,6 +77,7 @@ export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
               <Link
                 href={tab.href}
                 onClick={() => handleTabClick(tab.key)}
+                aria-current={isActive ? 'page' : undefined}
                 className={
                   isActive
                     ? 'inline-flex whitespace-nowrap rounded-md border border-cyan-500/50 bg-cyan-500/15 px-3 py-2 text-sm font-semibold text-cyan-300'

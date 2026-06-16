@@ -60,7 +60,12 @@ export function Header() {
             >
               {isRefreshing ? 'Refreshing' : 'Refresh'}
             </button>
-            <span suppressHydrationWarning className="pointer-events-none text-xs text-slate-400">
+            <span
+              suppressHydrationWarning
+              role="status"
+              aria-live="polite"
+              className="pointer-events-none text-xs text-slate-400"
+            >
               {refreshLabel}
             </span>
           </div>
