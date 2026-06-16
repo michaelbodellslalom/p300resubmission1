@@ -2,11 +2,21 @@
 
 import { useMemo } from 'react';
 
-import { ContentEngagementScatter } from '@/components/ContentEngagementScatter';
+import dynamic from 'next/dynamic';
+
 import { ErrorState } from '@/components/ErrorState';
+import { LoadingState } from '@/components/LoadingState';
 import { useFetchContentData } from '@/hooks/useFetchContentData';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
+
+const ContentEngagementScatter = dynamic(
+  () => import('@/components/ContentEngagementScatter').then((module) => module.ContentEngagementScatter),
+  {
+    ssr: false,
+    loading: () => <LoadingState label="Loading engagement correlation" />,
+  },
+);
 
 function formatNumber(v: number) { return new Intl.NumberFormat('en-US').format(Math.round(v)); }
 function formatCurrency(v: number) { return `$${new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(v)}`; }

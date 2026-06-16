@@ -1,11 +1,28 @@
 "use client";
 
+import dynamic from 'next/dynamic';
+
 import { ChurnBreakdownTable } from '@/components/ChurnBreakdownTable';
-import { ChurnReasonChart } from '@/components/ChurnReasonChart';
-import { CohortRetentionChart } from '@/components/CohortRetentionChart';
 import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
+import { LoadingState } from '@/components/LoadingState';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
+
+const CohortRetentionChart = dynamic(
+  () => import('@/components/CohortRetentionChart').then((module) => module.CohortRetentionChart),
+  {
+    ssr: false,
+    loading: () => <LoadingState label="Loading cohort retention" />,
+  },
+);
+
+const ChurnReasonChart = dynamic(
+  () => import('@/components/ChurnReasonChart').then((module) => module.ChurnReasonChart),
+  {
+    ssr: false,
+    loading: () => <LoadingState label="Loading churn reason chart" />,
+  },
+);
 
 function formatNumber(value: number): string {
   return new Intl.NumberFormat('en-US').format(Math.round(value));

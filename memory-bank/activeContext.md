@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-158: Implement code splitting**
+**T-159: Dynamic imports for heavy libraries**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -70,13 +70,14 @@
 - T-155 complete: alt-text equivalent coverage added for dashboard visualizations via descriptive aria-labels on chart containers
 - T-156 complete: color-blind palette QA and remediation applied to multi-series/categorical charts with high-separation hues and non-color cue support
 - T-157 complete: Lighthouse optimization pass added targeted chart code-splitting and package import optimization with production re-checks
+- T-158 complete: route-level code splitting expanded with dynamic chart imports on overview, subscribers, revenue, and insights routes
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-158 planning: expand route-level and heavy-component code splitting strategy
+- T-159 planning: dynamic import strategy for remaining heavy libraries and export flows
 
 ## Blockers
 None
@@ -89,4 +90,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-157 complete; next T-158 code splitting
+June 16, 2026 - T-158 complete; next T-159 dynamic imports

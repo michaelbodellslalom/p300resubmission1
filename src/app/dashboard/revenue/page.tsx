@@ -1,9 +1,19 @@
 "use client";
 
+import dynamic from 'next/dynamic';
+
 import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
-import { RevenueTrendChart } from '@/components/RevenueTrendChart';
+import { LoadingState } from '@/components/LoadingState';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
+
+const RevenueTrendChart = dynamic(
+  () => import('@/components/RevenueTrendChart').then((module) => module.RevenueTrendChart),
+  {
+    ssr: false,
+    loading: () => <LoadingState label="Loading revenue trend" />,
+  },
+);
 
 function formatNumber(v: number) { return new Intl.NumberFormat('en-US').format(Math.round(v)); }
 function formatCurrency(v: number) { return `$${formatNumber(v)}`; }
