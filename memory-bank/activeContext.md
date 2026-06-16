@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 1: Header & Navigation** ✅ COMPLETE
+**Phase 2: Overview KPIs** 🚧 IN PROGRESS
 
 ## Next Task
-**T-023: Create reusable KPI Card component**
+**T-029: Implement loading state refinement for KPI cards**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -27,11 +27,18 @@
 - T-020 complete: global date range wired to Zustand state
 - T-021 complete: manual refresh wired with React Query invalidation
 - T-022 complete: dashboard shell layout with header, tabs, and content region
+- T-023 complete: reusable KPI card component created
+- T-024 complete: subscriber KPI cards rendered in Overview
+- T-025 complete: revenue KPI cards rendered in Overview
+- T-026 complete: engagement KPI card rendered in Overview
+- T-027 complete: subscriber KPI cards wired to subscriber hook data
+- T-028 complete: revenue KPI cards wired to revenue hook data
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
+ - Production build and type-check verified after KPI refactor
 
 ## What's In Progress
-- Preparing Phase 2 KPI component implementation
+- Preparing KPI loading/error state refinement
 
 ## Blockers
 None
@@ -43,4 +50,4 @@ None
 - Real-time polling remains planned for later phase
 
 ## Last Updated
-June 16, 2026 - Phase 1 complete, ready for T-023
+June 16, 2026 - T-023 to T-028 complete, ready for T-029

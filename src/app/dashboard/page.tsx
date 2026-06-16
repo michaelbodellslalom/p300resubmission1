@@ -1,5 +1,6 @@
 "use client";
 
+import { KPICard } from '@/components/KPICard';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
 
@@ -26,47 +27,56 @@ export default function OverviewPage() {
       </section>
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <article className="card">
-          <p className="text-xs uppercase tracking-wide text-slate-400">Total Subscribers</p>
-          <p className="mt-2 text-3xl font-bold text-slate-100">
-            {loadingSubscribers || !overview ? '...' : formatNumber(overview.totalSubscribers)}
-          </p>
-        </article>
+        <KPICard
+          label="Total Subscribers"
+          value={loadingSubscribers || !overview ? '...' : formatNumber(overview.totalSubscribers)}
+          tone="neutral"
+          helperText="Current active subscriber base"
+          isLoading={loadingSubscribers || !overview}
+        />
 
-        <article className="card">
-          <p className="text-xs uppercase tracking-wide text-slate-400">Subscriber Growth</p>
-          <p className="mt-2 text-3xl font-bold text-emerald-400">
-            {loadingSubscribers || !overview ? '...' : formatPercent(overview.subscriberGrowthRate)}
-          </p>
-        </article>
+        <KPICard
+          label="Subscriber Growth"
+          value={loadingSubscribers || !overview ? '...' : formatPercent(overview.subscriberGrowthRate)}
+          tone="success"
+          trendValue={overview?.subscriberGrowthRate}
+          helperText="Net movement over selected range"
+          isLoading={loadingSubscribers || !overview}
+        />
 
-        <article className="card">
-          <p className="text-xs uppercase tracking-wide text-slate-400">Churn Rate</p>
-          <p className="mt-2 text-3xl font-bold text-amber-400">
-            {loadingSubscribers || !overview ? '...' : formatPercent(overview.churnRate)}
-          </p>
-        </article>
+        <KPICard
+          label="Churn Rate"
+          value={loadingSubscribers || !overview ? '...' : formatPercent(overview.churnRate)}
+          tone="warning"
+          trendValue={overview ? -overview.churnRate : undefined}
+          helperText="Lower is better"
+          isLoading={loadingSubscribers || !overview}
+        />
 
-        <article className="card">
-          <p className="text-xs uppercase tracking-wide text-slate-400">Total Revenue</p>
-          <p className="mt-2 text-3xl font-bold text-cyan-300">
-            {loadingRevenue || !latestRevenuePoint ? '...' : `$${formatNumber(latestRevenuePoint.totalRevenue)}`}
-          </p>
-        </article>
+        <KPICard
+          label="Total Revenue"
+          value={loadingRevenue || !latestRevenuePoint ? '...' : `$${formatNumber(latestRevenuePoint.totalRevenue)}`}
+          tone="info"
+          helperText="Ad + sponsored + subscription proxy"
+          isLoading={loadingRevenue || !latestRevenuePoint}
+        />
 
-        <article className="card">
-          <p className="text-xs uppercase tracking-wide text-slate-400">Revenue Trend</p>
-          <p className="mt-2 text-3xl font-bold text-cyan-300">
-            {loadingSubscribers || !overview ? '...' : formatPercent(overview.revenueTrendRate)}
-          </p>
-        </article>
+        <KPICard
+          label="Revenue Trend"
+          value={loadingSubscribers || !overview ? '...' : formatPercent(overview.revenueTrendRate)}
+          tone="info"
+          trendValue={overview?.revenueTrendRate}
+          helperText="Momentum vs start of selected range"
+          isLoading={loadingSubscribers || !overview}
+        />
 
-        <article className="card">
-          <p className="text-xs uppercase tracking-wide text-slate-400">Avg Engagement</p>
-          <p className="mt-2 text-3xl font-bold text-slate-100">
-            {loadingSubscribers || !overview ? '...' : formatPercent(overview.avgEngagementRate)}
-          </p>
-        </article>
+        <KPICard
+          label="Avg Engagement"
+          value={loadingSubscribers || !overview ? '...' : formatPercent(overview.avgEngagementRate)}
+          tone="neutral"
+          helperText="Cross-format engagement average"
+          isLoading={loadingSubscribers || !overview}
+        />
       </section>
     </div>
   );

@@ -9,7 +9,7 @@ Planning complete | Development in progress
 |-------|--------|-------|-------|
 | 0 - Scaffolding | In Progress | T-001-T-014 | T-012 now complete |
 | 1 - Header & Nav | Complete | T-015-T-022 | Dashboard shell, tabs, and date controls are live |
-| 2 - Overview KPIs | Not Started | T-023-T-034 | Blocked by Phase 1 |
+| 2 - Overview KPIs | In Progress | T-023-T-034 | Reusable KPI component and initial KPI wiring complete |
 | 3 - Overview Charts | Not Started | T-035-T-050 | Blocked by Phase 2 |
 | 4 - Subscribers Tab | Not Started | T-051-T-068 | Blocked by Phase 1 |
 | 5 - Content Tab | Not Started | T-069-T-088 | Blocked by Phase 1 |
@@ -38,9 +38,13 @@ Planning complete | Development in progress
 - Added routed dashboard pages for overview, subscribers, content, revenue, reports, and insights
 - Wired manual refresh and last-updated state into header
 - Verified build and type-check after Phase 1 shell implementation
+- Added reusable KPICard component with tone and trend variants
+- Refactored Overview KPI section to consume KPICard component
+- Wired subscriber, revenue, and engagement KPI cards to live query data
+- Verified build and type-check after KPI implementation
 
 ## In Progress
-- Next: T-023 (reusable KPI Card component)
+- Next: T-029 (KPI loading-state refinement)
 
 ## Risks and Notes
 - No blockers currently
@@ -51,3 +55,5 @@ Planning complete | Development in progress
 - Next.js initialization and setup
 - Configuration fixes for Tailwind and TypeScript
 - Typed mock data and Zustand store (T-007/T-008)
+- Data hooks and API routes (T-009-T-012)
+- Dashboard shell and navigation (T-015-T-022)
