@@ -86,7 +86,7 @@ export function ChurnBreakdownTable({
 
   return (
     <section className="card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40">
-      <div className="mb-3 flex items-end justify-between gap-3">
+      <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between sm:gap-3">
         <div>
           <p className="text-xs uppercase tracking-wide text-slate-400">Churn Breakdown</p>
           <p className="text-sm text-slate-300">Primary reasons contributing to subscriber churn</p>
@@ -94,11 +94,11 @@ export function ChurnBreakdownTable({
         <p className="text-xs text-slate-500">Click headers to sort</p>
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full text-left text-sm">
+      <div className="overflow-x-auto rounded-md border border-slate-800/80">
+        <table className="min-w-full text-left text-xs sm:text-sm">
           <thead>
             <tr className="border-b border-slate-700 text-xs uppercase tracking-wide text-slate-400">
-              <th className="pb-2 pr-4">
+              <th className="whitespace-nowrap pb-2 pl-2 pr-4 sm:pl-3">
                 <button
                   type="button"
                   onClick={() => handleSort('reason')}
@@ -107,7 +107,7 @@ export function ChurnBreakdownTable({
                   Reason {directionGlyph('reason')}
                 </button>
               </th>
-              <th className="pb-2 pr-4 text-right">
+              <th className="whitespace-nowrap pb-2 pr-4 text-right">
                 <button
                   type="button"
                   onClick={() => handleSort('percentage')}
@@ -116,7 +116,7 @@ export function ChurnBreakdownTable({
                   Share {directionGlyph('percentage')}
                 </button>
               </th>
-              <th className="pb-2 text-right">
+              <th className="whitespace-nowrap pb-2 pr-2 text-right sm:pr-3">
                 <button
                   type="button"
                   onClick={() => handleSort('affectedSubscribers')}
@@ -130,9 +130,9 @@ export function ChurnBreakdownTable({
           <tbody>
             {sortedData.map((row) => (
               <tr key={row.reason} className="border-b border-slate-800/70 last:border-0">
-                <td className="py-2 pr-4 text-slate-200">{row.reason}</td>
+                <td className="py-2 pl-2 pr-4 text-slate-200 sm:pl-3">{row.reason}</td>
                 <td className="py-2 pr-4 text-right text-slate-300">{row.percentage.toFixed(1)}%</td>
-                <td className="py-2 text-right font-medium text-slate-200">
+                <td className="py-2 pr-2 text-right font-medium text-slate-200 sm:pr-3">
                   {formatNumber(row.affectedSubscribers)}
                 </td>
               </tr>

@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from 'react';
+
 import {
   Bar,
   CartesianGrid,
@@ -51,6 +53,12 @@ export function RevenueTrendChart({
   isError,
   onRetry,
 }: RevenueTrendChartProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   if (isLoading) {
     return <LoadingState label="Loading revenue trend" />;
   }
@@ -72,14 +80,18 @@ export function RevenueTrendChart({
     );
   }
 
+  if (!isMounted) {
+    return <LoadingState label="Preparing revenue trend" />;
+  }
+
   return (
-    <div className="card h-72 border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40">
+    <div className="card h-64 border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40 sm:h-72">
       <div className="mb-3">
         <p className="text-xs uppercase tracking-wide text-slate-400">Revenue Trend</p>
         <p className="text-sm text-slate-300">Total revenue and RPM across the selected date range</p>
       </div>
 
-      <div className="h-[84%] w-full min-h-52 min-w-0">
+      <div className="h-[78%] w-full min-h-44 min-w-0 sm:h-[84%] sm:min-h-52">
         <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={208}>
           <ComposedChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -4 }}>
             <CartesianGrid stroke="#334155" strokeDasharray="4 4" vertical={false} />
@@ -88,6 +100,8 @@ export function RevenueTrendChart({
               tickFormatter={formatDateLabel}
               stroke="#64748B"
               tick={{ fill: '#94A3B8', fontSize: 11 }}
+              minTickGap={24}
+              interval="preserveStartEnd"
             />
             <YAxis
               yAxisId="revenue"
@@ -121,6 +135,7 @@ export function RevenueTrendChart({
             <Legend
               verticalAlign="top"
               height={22}
+              iconSize={10}
               wrapperStyle={{ fontSize: '12px', color: '#CBD5E1' }}
             />
             <Bar

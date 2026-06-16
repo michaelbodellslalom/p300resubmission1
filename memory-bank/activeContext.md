@@ -4,7 +4,7 @@
 **Phase 3: Overview Charts** 🚧 IN PROGRESS
 
 ## Next Task
-**T-045: Responsive layout refinement for chart and table sections**
+**T-046: Verify and polish no-data states across Overview chart and table sections**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -47,13 +47,14 @@
 - T-041 complete: Churn Breakdown table added to Overview
 - T-042 complete: churn table sorting added for reason, share, and affected subscribers
 - T-043 complete: churn breakdown values now recompute from selected date range
+- T-045 complete: responsive refinement for chart and table sections across mobile and desktop
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-045 planning: chart/table responsive layout refinement for smaller screens
+- T-046 planning: no-data state validation for chart and table widgets
 
 ## Blockers
 None
@@ -66,4 +67,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-043 complete, churn table now range-aware
+June 16, 2026 - T-045 complete, responsive charts/table refinement shipped

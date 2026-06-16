@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from 'react';
+
 import {
   Line,
   LineChart,
@@ -38,6 +40,12 @@ export function SubscriberTrendChart({
   isError,
   onRetry,
 }: SubscriberTrendChartProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   if (isLoading) {
     return <LoadingState label="Loading subscriber trend" />;
   }
@@ -59,14 +67,18 @@ export function SubscriberTrendChart({
     );
   }
 
+  if (!isMounted) {
+    return <LoadingState label="Preparing subscriber trend" />;
+  }
+
   return (
-    <div className="card h-72 border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40">
+    <div className="card h-64 border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40 sm:h-72">
       <div className="mb-4">
         <p className="text-xs uppercase tracking-wide text-slate-400">Subscriber Trend</p>
         <p className="text-sm text-slate-300">Total subscribers over the selected time range</p>
       </div>
 
-      <div className="h-[82%] w-full min-h-52 min-w-0">
+      <div className="h-[78%] w-full min-h-44 min-w-0 sm:h-[82%] sm:min-h-52">
         <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={208}>
         <LineChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -12 }}>
           <XAxis
@@ -74,6 +86,8 @@ export function SubscriberTrendChart({
             tickFormatter={formatDateLabel}
             stroke="#64748B"
             tick={{ fill: '#94A3B8', fontSize: 11 }}
+            minTickGap={24}
+            interval="preserveStartEnd"
           />
           <YAxis
             stroke="#64748B"
