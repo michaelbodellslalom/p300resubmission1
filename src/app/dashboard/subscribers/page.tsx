@@ -1,6 +1,7 @@
 "use client";
 
 import { ChurnBreakdownTable } from '@/components/ChurnBreakdownTable';
+import { ChurnReasonChart } from '@/components/ChurnReasonChart';
 import { CohortRetentionChart } from '@/components/CohortRetentionChart';
 import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
@@ -121,14 +122,23 @@ export default function SubscribersPage() {
         </div>
       </section>
 
-      {/* Churn breakdown */}
-      <section className="overflow-hidden">
-        <ChurnBreakdownTable
+      {/* Churn reason chart + breakdown table side by side on wide screens */}
+      <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <ChurnReasonChart
           data={data?.churnReasons ?? []}
           isLoading={isLoading}
           isError={isError}
           onRetry={() => void refetch()}
         />
+
+        <div className="overflow-hidden">
+          <ChurnBreakdownTable
+            data={data?.churnReasons ?? []}
+            isLoading={isLoading}
+            isError={isError}
+            onRetry={() => void refetch()}
+          />
+        </div>
       </section>
     </div>
   );
