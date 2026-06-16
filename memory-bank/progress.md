@@ -16,9 +16,9 @@ Planning complete | Development in progress
 | 6 - Revenue Tab | In Progress | T-089-T-104 | KPIs, RevenueTrendChart, format revenue table shipped (T-089-T-097) |
 | 7 - Insights Tab | Complete | T-105-T-116 | Insight cards, scatter chart, top-content table, revenue driver bars |
 | 8 - Reports Tab | In Progress | T-117-T-130 | CSV export for all 3 datasets (T-117/T-122) |
-| 9 - Mobile and Responsive | In Progress | T-131-T-142 | T-131 nav + T-132 KPI stacking + T-133 overflow + T-134 chart readability + T-135 controls + T-136 sort targets + T-137 header spacing + T-138 loading spacing + T-139 error/empty spacing + T-140 transition rhythm + T-141 reduced-motion polish complete |
+| 9 - Mobile and Responsive | Complete | T-131-T-142 | Completed through T-142 final mobile responsive QA sweep |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
-| 11 - Accessibility | Not Started | T-151-T-164 | Blocked by Phase 9 |
+| 11 - Accessibility | In Progress | T-151-T-164 | T-151 baseline audit queued next |
 | 12 - Testing | Not Started | T-165-T-180 | Blocked by Phase 11 |
 | 13 - Documentation | Not Started | T-181-T-190 | Can begin after core UI exists |
 | 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
@@ -89,9 +89,10 @@ Planning complete | Development in progress
 - Standardized mobile error/empty state spacing with shared panel/inline variants to keep vertical rhythm consistent across tabs
 - Added shared state entry animation utility with reduced-motion fallback for smoother loading/error/empty/content transitions
 - Completed reduced-motion QA and polish by disabling pulse/transition motion under prefers-reduced-motion for mobile accessibility
+- Completed final mobile responsive QA across all six tabs at 375px with heading/section coverage and 44px control target checks
 
 ## In Progress
-- Next: T-142 (final mobile responsive QA sweep across all tabs)
+- Next: T-151 (accessibility baseline audit and first remediation pass)
 
 ## Risks and Notes
 - No blockers currently
