@@ -64,6 +64,11 @@ export function ChurnBreakdownTable({
     return sortDirection === 'asc' ? '↑' : '↓';
   };
 
+  const ariaSort = (key: SortKey): 'ascending' | 'descending' | 'none' => {
+    if (key !== sortKey) return 'none';
+    return sortDirection === 'asc' ? 'ascending' : 'descending';
+  };
+
   if (isLoading) {
     return <LoadingState label="Loading churn breakdown" />;
   }
@@ -100,28 +105,31 @@ export function ChurnBreakdownTable({
         <table className="min-w-[34rem] text-left text-xs sm:min-w-full sm:text-sm">
           <thead>
             <tr className="border-b border-slate-700 text-xs uppercase tracking-wide text-slate-400">
-              <th className="whitespace-nowrap pb-2 pl-2 pr-4 sm:pl-3">
+              <th scope="col" aria-sort={ariaSort('reason')} className="whitespace-nowrap pb-2 pl-2 pr-4 sm:pl-3">
                 <button
                   type="button"
                   onClick={() => handleSort('reason')}
+                  aria-label={`Sort by reason${sortKey === 'reason' ? `, currently ${sortDirection === 'asc' ? 'ascending' : 'descending'}` : ''}`}
                   className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                 >
                   Reason {directionGlyph('reason')}
                 </button>
               </th>
-              <th className="whitespace-nowrap pb-2 pr-4 text-right">
+              <th scope="col" aria-sort={ariaSort('percentage')} className="whitespace-nowrap pb-2 pr-4 text-right">
                 <button
                   type="button"
                   onClick={() => handleSort('percentage')}
+                  aria-label={`Sort by share${sortKey === 'percentage' ? `, currently ${sortDirection === 'asc' ? 'ascending' : 'descending'}` : ''}`}
                   className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                 >
                   Share {directionGlyph('percentage')}
                 </button>
               </th>
-              <th className="whitespace-nowrap pb-2 pr-2 text-right sm:pr-3">
+              <th scope="col" aria-sort={ariaSort('affectedSubscribers')} className="whitespace-nowrap pb-2 pr-2 text-right sm:pr-3">
                 <button
                   type="button"
                   onClick={() => handleSort('affectedSubscribers')}
+                  aria-label={`Sort by affected subscribers${sortKey === 'affectedSubscribers' ? `, currently ${sortDirection === 'asc' ? 'ascending' : 'descending'}` : ''}`}
                   className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                 >
                   Affected Subs {directionGlyph('affectedSubscribers')}

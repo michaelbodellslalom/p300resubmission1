@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-152: Keyboard navigation QA and remediation pass**
+**T-154: Create focus indicators**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -64,13 +64,15 @@
 - T-141 complete: reduced-motion QA and polish pass completed (state-enter + pulse disabled under reduced motion)
 - T-142 complete: final mobile responsive QA sweep passed across overview/subscribers/content/revenue/reports/insights
 - T-151 complete: accessibility baseline remediation pass added skip link, focus-visible rings, aria-current nav semantics, status announcements, and table captions
+- T-152 complete: ARIA labels and sort semantics expanded for mobile menu control and sortable table headers
+- T-153 complete: keyboard navigation remediation added Enter/Escape menu behavior with reliable focus return and keyboard QA across all dashboard routes
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-152 planning: keyboard navigation QA and remediation for tab flow and focus handling
+- T-154 planning: focus indicator consistency audit and polish across remaining interactive controls
 
 ## Blockers
 None
@@ -83,4 +85,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-151 complete; next T-152 keyboard navigation QA
+June 16, 2026 - T-152/T-153 complete; next T-154 focus indicator polish

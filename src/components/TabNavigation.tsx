@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Link from 'next/link';
 
@@ -22,6 +22,32 @@ const tabs: Array<{ key: DashboardTab; label: string; href: string }> = [
 
 export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return;
+    }
+
+    const firstMobileLink = mobileMenuRef.current?.querySelector('a');
+    firstMobileLink?.focus();
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') {
+        return;
+      }
+
+      setIsMobileMenuOpen(false);
+      menuButtonRef.current?.focus();
+    };
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isMobileMenuOpen]);
 
   const handleTabClick = (tab: DashboardTab) => {
     onTabChange(tab);
@@ -33,8 +59,10 @@ export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
       <div className="flex items-center justify-between py-2 md:hidden">
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Sections</p>
         <button
+          ref={menuButtonRef}
           type="button"
           onClick={() => setIsMobileMenuOpen((open) => !open)}
+          aria-label={isMobileMenuOpen ? 'Close dashboard sections menu' : 'Open dashboard sections menu'}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-dashboard-sections"
           className="min-h-11 rounded-md border border-slate-700 bg-slate-900 px-3.5 py-2 text-sm font-semibold text-slate-200 hover:border-slate-500"
@@ -44,7 +72,7 @@ export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
       </div>
 
       {isMobileMenuOpen && (
-        <ul id="mobile-dashboard-sections" className="grid gap-1 pb-2 md:hidden">
+        <ul ref={mobileMenuRef} id="mobile-dashboard-sections" className="grid gap-1 pb-2 md:hidden">
           {tabs.map((tab) => {
             const isActive = tab.key === activeTab;
 

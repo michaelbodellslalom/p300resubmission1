@@ -82,6 +82,11 @@ export default function ContentPage() {
     return sortDir === 'asc' ? '↑' : '↓';
   };
 
+  const ariaSort = (key: SortKey): 'ascending' | 'descending' | 'none' => {
+    if (key !== sortKey) return 'none';
+    return sortDir === 'asc' ? 'ascending' : 'descending';
+  };
+
   return (
     <div className="space-y-6">
       <section>
@@ -169,13 +174,14 @@ export default function ContentPage() {
                 <caption className="sr-only">Content performance table with sortable metrics for views, engagement, ad revenue, RPM, and average session time.</caption>
                 <thead>
                   <tr className="border-b border-slate-700 text-xs uppercase tracking-wide text-slate-400">
-                    <th className="whitespace-nowrap pb-2 pl-2 pr-4 sm:pl-3">Title</th>
-                    <th className="whitespace-nowrap pb-2 pr-3 text-center">Format</th>
+                    <th scope="col" className="whitespace-nowrap pb-2 pl-2 pr-4 sm:pl-3">Title</th>
+                    <th scope="col" className="whitespace-nowrap pb-2 pr-3 text-center">Format</th>
                     {(Object.keys(SORT_LABELS) as SortKey[]).map((key) => (
-                      <th key={key} className="whitespace-nowrap pb-2 pr-3 text-right">
+                      <th key={key} scope="col" aria-sort={ariaSort(key)} className="whitespace-nowrap pb-2 pr-3 text-right">
                         <button
                           type="button"
                           onClick={() => handleSort(key)}
+                          aria-label={`Sort by ${SORT_LABELS[key]}${key === sortKey ? `, currently ${sortDir === 'asc' ? 'ascending' : 'descending'}` : ''}`}
                           className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                         >
                           {SORT_LABELS[key]} {dirGlyph(key)}

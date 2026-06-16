@@ -18,7 +18,7 @@ Planning complete | Development in progress
 | 8 - Reports Tab | In Progress | T-117-T-130 | CSV export for all 3 datasets (T-117/T-122) |
 | 9 - Mobile and Responsive | Complete | T-131-T-142 | Completed through T-142 final mobile responsive QA sweep |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
-| 11 - Accessibility | In Progress | T-151-T-164 | T-151 baseline remediation complete; T-152 keyboard QA next |
+| 11 - Accessibility | In Progress | T-151-T-164 | T-151/T-152/T-153 complete; T-154 focus indicator polish next |
 | 12 - Testing | Not Started | T-165-T-180 | Blocked by Phase 11 |
 | 13 - Documentation | Not Started | T-181-T-190 | Can begin after core UI exists |
 | 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
@@ -91,9 +91,11 @@ Planning complete | Development in progress
 - Completed reduced-motion QA and polish by disabling pulse/transition motion under prefers-reduced-motion for mobile accessibility
 - Completed final mobile responsive QA across all six tabs at 375px with heading/section coverage and 44px control target checks
 - Completed accessibility baseline remediation with skip link, focus-visible ring treatment, aria-current on active nav links, live status announcements, and table captions
+- Completed ARIA label pass by adding explicit labels for mobile section menu control and sortable table header actions, including aria-sort state exposure
+- Completed keyboard navigation pass by enabling keyboard menu open/close flow (Enter/Escape), automatic first-item focus on open, and focus return to trigger on close
 
 ## In Progress
-- Next: T-152 (keyboard navigation QA and remediation pass)
+- Next: T-154 (focus indicator consistency audit and polish)
 
 ## Risks and Notes
 - No blockers currently
