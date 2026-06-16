@@ -4,7 +4,7 @@
 **Phase 2: Overview KPIs** 🚧 IN PROGRESS
 
 ## Next Task
-**T-029: Implement loading state refinement for KPI cards**
+**T-031: Validate and polish responsive KPI card grid behavior**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -33,12 +33,14 @@
 - T-026 complete: engagement KPI card rendered in Overview
 - T-027 complete: subscriber KPI cards wired to subscriber hook data
 - T-028 complete: revenue KPI cards wired to revenue hook data
+- T-029 complete: KPI loading state upgraded to reusable skeleton component
+- T-030 complete: KPI error state added with retry action
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
  - Production build and type-check verified after KPI refactor
 
 ## What's In Progress
-- Preparing KPI loading/error state refinement
+- Preparing responsive KPI layout validation and polish
 
 ## Blockers
 None
@@ -50,4 +52,4 @@ None
 - Real-time polling remains planned for later phase
 
 ## Last Updated
-June 16, 2026 - T-023 to T-028 complete, ready for T-029
+June 16, 2026 - T-029/T-030 complete, ready for T-031

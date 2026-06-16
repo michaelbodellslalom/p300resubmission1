@@ -1,5 +1,6 @@
 "use client";
 
+import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
@@ -13,18 +14,42 @@ function formatPercent(value: number): string {
 }
 
 export default function OverviewPage() {
-  const { data: subscriberData, isLoading: loadingSubscribers } = useFetchSubscriberData();
-  const { data: revenueData, isLoading: loadingRevenue } = useFetchRevenueData();
+  const {
+    data: subscriberData,
+    isLoading: loadingSubscribers,
+    isError: isSubscriberError,
+    refetch: refetchSubscribers,
+  } = useFetchSubscriberData();
+  const {
+    data: revenueData,
+    isLoading: loadingRevenue,
+    isError: isRevenueError,
+    refetch: refetchRevenue,
+  } = useFetchRevenueData();
 
   const overview = subscriberData?.overview;
   const latestRevenuePoint = revenueData?.timeline[revenueData.timeline.length - 1];
+  const hasError = isSubscriberError || isRevenueError;
+
+  const handleRetry = async () => {
+    await Promise.all([refetchSubscribers(), refetchRevenue()]);
+  };
 
   return (
     <div className="space-y-6">
       <section>
         <h2 className="text-2xl font-bold">Overview</h2>
-        <p className="text-sm text-slate-400">Live snapshot of subscriber health, engagement, and revenue performance.</p>
+        <p className="text-sm text-slate-400">
+          Live snapshot of subscriber health, engagement, and revenue performance.
+        </p>
       </section>
+
+      {hasError && (
+        <ErrorState
+          message="Unable to load one or more KPI data sources."
+          onRetry={handleRetry}
+        />
+      )}
 
       <section className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         <KPICard

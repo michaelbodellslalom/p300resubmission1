@@ -1,5 +1,7 @@
 "use client";
 
+import { LoadingState } from '@/components/LoadingState';
+
 interface KPICardProps {
   label: string;
   value: string;
@@ -42,13 +44,15 @@ export function KPICard({
   helperText,
   isLoading = false,
 }: KPICardProps) {
+  if (isLoading) {
+    return <LoadingState label={`Loading ${label}`} />;
+  }
+
   return (
     <article className="card min-h-32">
       <p className="text-xs uppercase tracking-wide text-slate-400">{label}</p>
 
-      <p className={`mt-2 text-3xl font-bold ${toneClass(tone)}`}>
-        {isLoading ? '...' : value}
-      </p>
+      <p className={`mt-2 text-3xl font-bold ${toneClass(tone)}`}>{value}</p>
 
       {typeof trendValue === 'number' && (
         <p className={`mt-2 text-xs font-semibold ${trendClass(trendValue)}`}>

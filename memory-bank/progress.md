@@ -9,7 +9,7 @@ Planning complete | Development in progress
 |-------|--------|-------|-------|
 | 0 - Scaffolding | In Progress | T-001-T-014 | T-012 now complete |
 | 1 - Header & Nav | Complete | T-015-T-022 | Dashboard shell, tabs, and date controls are live |
-| 2 - Overview KPIs | In Progress | T-023-T-034 | Reusable KPI component and initial KPI wiring complete |
+| 2 - Overview KPIs | In Progress | T-023-T-034 | KPI component, wiring, loading, and error handling complete |
 | 3 - Overview Charts | Not Started | T-035-T-050 | Blocked by Phase 2 |
 | 4 - Subscribers Tab | Not Started | T-051-T-068 | Blocked by Phase 1 |
 | 5 - Content Tab | Not Started | T-069-T-088 | Blocked by Phase 1 |
@@ -42,9 +42,12 @@ Planning complete | Development in progress
 - Refactored Overview KPI section to consume KPICard component
 - Wired subscriber, revenue, and engagement KPI cards to live query data
 - Verified build and type-check after KPI implementation
+- Added reusable LoadingState skeleton for KPI cards
+- Added reusable ErrorState with retry behavior for KPI query failures
+- Wired overview-level retry to subscriber and revenue refetch actions
 
 ## In Progress
-- Next: T-029 (KPI loading-state refinement)
+- Next: T-031 (responsive KPI grid validation and polish)
 
 ## Risks and Notes
 - No blockers currently
