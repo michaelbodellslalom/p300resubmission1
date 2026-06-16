@@ -11,6 +11,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
 import { type SubscriberSnapshot } from '@/types/dashboard';
@@ -61,9 +62,10 @@ export function SubscriberTrendChart({
 
   if (!data.length) {
     return (
-      <div className="card min-h-36 border border-slate-700">
-        <p className="text-sm text-slate-400">No subscriber trend data available for this range.</p>
-      </div>
+      <EmptyState
+        title="No subscriber trend data"
+        description="Try expanding the selected date range to load subscriber trend values."
+      />
     );
   }
 

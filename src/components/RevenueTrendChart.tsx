@@ -14,6 +14,7 @@ import {
   YAxis,
 } from 'recharts';
 
+import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
 import { type RevenueSnapshot } from '@/types/dashboard';
@@ -74,9 +75,10 @@ export function RevenueTrendChart({
 
   if (!data.length) {
     return (
-      <div className="card min-h-36 border border-slate-700">
-        <p className="text-sm text-slate-400">No revenue trend data available for this range.</p>
-      </div>
+      <EmptyState
+        title="No revenue trend data"
+        description="Try expanding the selected date range to load revenue and RPM values."
+      />
     );
   }
 

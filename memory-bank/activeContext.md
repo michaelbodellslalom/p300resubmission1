@@ -4,7 +4,7 @@
 **Phase 3: Overview Charts** 🚧 IN PROGRESS
 
 ## Next Task
-**T-046: Verify and polish no-data states across Overview chart and table sections**
+**T-047: Style chart surfaces and legends with final design color polish**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -48,13 +48,14 @@
 - T-042 complete: churn table sorting added for reason, share, and affected subscribers
 - T-043 complete: churn breakdown values now recompute from selected date range
 - T-045 complete: responsive refinement for chart and table sections across mobile and desktop
+- T-046 complete: no-data states validated and standardized for Overview charts and churn table
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-046 planning: no-data state validation for chart and table widgets
+- T-047 planning: final chart visual polish against design color direction
 
 ## Blockers
 None
@@ -67,4 +68,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-045 complete, responsive charts/table refinement shipped
+June 16, 2026 - T-046 complete, Overview no-data states polished

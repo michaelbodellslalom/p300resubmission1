@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 
+import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
 import { type ChurnReason } from '@/types/dashboard';
@@ -78,9 +79,10 @@ export function ChurnBreakdownTable({
 
   if (!data.length) {
     return (
-      <div className="card min-h-36 border border-slate-700">
-        <p className="text-sm text-slate-400">No churn reason data available for this range.</p>
-      </div>
+      <EmptyState
+        title="No churn breakdown data"
+        description="Try expanding the selected date range to calculate churn reasons."
+      />
     );
   }
 

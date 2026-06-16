@@ -216,7 +216,7 @@ export function getChurnReasonsForRange(range?: DateRange): ChurnReason[] {
   const totalChurned = subs.reduce((sum, point) => sum + point.churnedSubscribers, 0);
 
   if (!subs.length || totalChurned <= 0) {
-    return generateChurnReasonsFromWeights(0, churnReasonBlueprint.map((item) => item.weight));
+    return [];
   }
 
   const avgChurnRate =
