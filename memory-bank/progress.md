@@ -21,7 +21,7 @@ Planning complete | Development in progress
 | 11 - Accessibility | Complete | T-151-T-164 | Completed through T-164 (caching strategy + performance dashboard) |
 | 12 - Testing | Complete | T-165-T-180 | Completed through T-180 with expanded integration/export coverage |
 | 13 - Documentation | Complete | T-181-T-190 | Completed through T-190 visual QA sweep |
-| 14 - Deployment | In Progress | T-191-T-198 | Deployment setup and launch tasks now active |
+| 14 - Deployment | Complete | T-191-T-198 | Production deployed and launch verification artifacts completed |
 
 ## Completed Work
 - Initialized repository and baseline docs
@@ -126,9 +126,15 @@ Planning complete | Development in progress
 - Completed T-187 by adding DEPLOYMENT.md runbook with release validation, Vercel steps, and rollback guidance
 - Completed T-188 by adding CHANGELOG.md with recent feature, testing, CI, and documentation milestones
 - Completed T-190 with route-level visual QA sweep across all dashboard tabs and navigation shell
+- Completed T-191/T-192 by linking Vercel project and configuring production/preview environment variables
+- Completed T-193 with production Lighthouse audit on /dashboard (Perf 96, A11y 100, Best Practices 96, SEO 100)
+- Completed T-194 with production route/API smoke verification (HTTP 200)
+- Completed T-195 by adding PRODUCTION_CHECKLIST.md
+- Completed T-197 by deploying to production alias https://p300-resubmission1.vercel.app
+- Completed T-198 by adding POST_LAUNCH_MONITORING_PLAN.md
 
 ## In Progress
-- Next: T-191 (set up Vercel project)
+- Next: launch close-out tracking and optional post-launch enhancements
 
 ## Risks and Notes
 - No blockers currently

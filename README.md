@@ -151,6 +151,8 @@ MVP runs with local defaults and mock data.
 - Product brief: [BRIEF.md](BRIEF.md)
 - Deployment runbook: [DEPLOYMENT.md](DEPLOYMENT.md)
 - Change log: [CHANGELOG.md](CHANGELOG.md)
+- Production checklist: [PRODUCTION_CHECKLIST.md](PRODUCTION_CHECKLIST.md)
+- Post-launch monitoring plan: [POST_LAUNCH_MONITORING_PLAN.md](POST_LAUNCH_MONITORING_PLAN.md)
 
 ## Current Status
 

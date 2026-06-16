@@ -4,7 +4,7 @@
 **Phase 14 Deployment & Launch** — Final release execution in progress
 
 ## Next Task
-**T-191: Set up Vercel project**
+**Phase 14 wrap-up verification and cleanup**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -100,13 +100,20 @@
 - T-187 complete: deployment runbook created with validation gates, Vercel flow, post-deploy checks, and rollback steps
 - T-188 complete: root CHANGELOG added capturing recommendations feature, testing expansion, CI, and documentation milestones
 - T-190 complete: visual QA sweep validated headings/nav/main across all dashboard routes; existing non-blocking Recharts width/height warnings remain noted
+- T-191 complete: Vercel project linked and GitHub repository connected
+- T-192 complete: production and preview environment variables configured in Vercel
+- T-193 complete: production Lighthouse audit run on /dashboard (Perf 96, A11y 100, Best Practices 96, SEO 100)
+- T-194 complete: production route/API smoke checks passed (HTTP 200 across dashboard and API endpoints)
+- T-195 complete: production checklist documented at repository root
+- T-197 complete: production deployment executed and aliased to https://p300-resubmission1.vercel.app
+- T-198 complete: post-launch monitoring plan documented at repository root
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-191 planning: deployment environment setup and release path execution
+- Final launch documentation/tracker sync and commit
 
 ## Blockers
 None
@@ -122,4 +129,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-190 complete; next T-191 deployment setup
+June 16, 2026 - T-191/T-192/T-193/T-194/T-195/T-197/T-198 complete

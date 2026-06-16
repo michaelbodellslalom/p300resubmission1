@@ -51,3 +51,4 @@ turbo.json.bak
 .env
 .env.local
 .env.*.local
+.vercel
