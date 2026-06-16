@@ -26,15 +26,15 @@ interface ChurnReasonChartProps {
   onRetry?: () => void;
 }
 
-// Gradient steps cycling across the design palette
+// Color-blind-safe palette based on high-separation hues.
 const COLORS = [
-  '#F87171', // rose-400
-  '#FB923C', // orange-400
-  '#FACC15', // yellow-400
-  '#34D399', // emerald-400
-  '#38BDF8', // sky-400
-  '#818CF8', // indigo-400
-  '#C084FC', // purple-400
+  '#56B4E9',
+  '#E69F00',
+  '#009E73',
+  '#0072B2',
+  '#D55E00',
+  '#CC79A7',
+  '#999999',
 ];
 
 export function ChurnReasonChart({

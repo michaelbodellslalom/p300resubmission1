@@ -27,11 +27,11 @@ interface ContentScatterProps {
 }
 
 const FORMAT_COLORS: Record<string, string> = {
-  video: '#22D3EE',
-  article: '#34D399',
-  podcast: '#818CF8',
-  'short-form': '#FB923C',
-  'long-form': '#F472B6',
+  video: '#56B4E9',
+  article: '#009E73',
+  podcast: '#E69F00',
+  'short-form': '#D55E00',
+  'long-form': '#CC79A7',
 };
 
 export function ContentEngagementScatter({

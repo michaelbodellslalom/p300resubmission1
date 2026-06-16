@@ -107,8 +107,8 @@ export function RevenueTrendChart({
           <ComposedChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -4 }}>
             <defs>
               <linearGradient id="revenueBarGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#2DD4BF" stopOpacity={0.95} />
-                <stop offset="100%" stopColor="#0F766E" stopOpacity={0.8} />
+                <stop offset="0%" stopColor="#56B4E9" stopOpacity={0.95} />
+                <stop offset="100%" stopColor="#0072B2" stopOpacity={0.8} />
               </linearGradient>
             </defs>
             <CartesianGrid stroke="#1E293B" strokeDasharray="4 6" vertical={false} />
@@ -174,10 +174,11 @@ export function RevenueTrendChart({
               type="monotone"
               dataKey="rpm"
               name="RPM"
-              stroke="#7DD3FC"
+              stroke="#E69F00"
               strokeWidth={2.8}
+              strokeDasharray="6 3"
               dot={false}
-              activeDot={{ r: 4, fill: '#BAE6FD', stroke: '#0C4A6E', strokeWidth: 2 }}
+              activeDot={{ r: 4, fill: '#FDE68A', stroke: '#B45309', strokeWidth: 2 }}
             />
           </ComposedChart>
         </ResponsiveContainer>

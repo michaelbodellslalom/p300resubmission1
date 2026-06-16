@@ -56,12 +56,12 @@ export function CohortRetentionChart({
           <BarChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -16 }}>
             <defs>
               <linearGradient id="w4Gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#22D3EE" stopOpacity={0.9} />
-                <stop offset="100%" stopColor="#0E7490" stopOpacity={0.7} />
+                <stop offset="0%" stopColor="#56B4E9" stopOpacity={0.9} />
+                <stop offset="100%" stopColor="#0072B2" stopOpacity={0.7} />
               </linearGradient>
               <linearGradient id="w12Gradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#818CF8" stopOpacity={0.9} />
-                <stop offset="100%" stopColor="#4338CA" stopOpacity={0.7} />
+                <stop offset="0%" stopColor="#E69F00" stopOpacity={0.9} />
+                <stop offset="100%" stopColor="#D55E00" stopOpacity={0.7} />
               </linearGradient>
             </defs>
             <CartesianGrid stroke="#1E293B" strokeDasharray="3 6" vertical={false} />
