@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 0: Project Scaffolding & Setup**
+**Phase 1: Header & Navigation** ✅ COMPLETE
 
 ## Next Task
-**T-013: Finalize environment template and verify setup docs**
+**T-023: Create reusable KPI Card component**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -19,11 +19,19 @@
 - T-010 complete: useFetchContentData hook added with date and filter support
 - T-011 complete: useFetchRevenueData hook added with range-based filtering
 - T-012 complete: API routes added for subscribers, content, and revenue
+- T-015 complete: dashboard header with brand context and refresh control
+- T-016 complete: last-updated timestamp display
+- T-017 complete: tab navigation component with active state
+- T-018 complete: tab routing for overview, subscribers, content, revenue, reports, insights
+- T-019 complete: date-range presets and custom date inputs
+- T-020 complete: global date range wired to Zustand state
+- T-021 complete: manual refresh wired with React Query invalidation
+- T-022 complete: dashboard shell layout with header, tabs, and content region
 - QueryClient provider wired at app root for hooks
-- Production build and type-check verified after hooks and routes
+- Production build and type-check verified after shell routing
 
 ## What's In Progress
-- Preparing T-013 and T-014 completion pass
+- Preparing Phase 2 KPI component implementation
 
 ## Blockers
 None
@@ -35,4 +43,4 @@ None
 - Real-time polling remains planned for later phase
 
 ## Last Updated
-June 16, 2026 - T-012 complete, ready for T-013
+June 16, 2026 - Phase 1 complete, ready for T-023

@@ -8,7 +8,7 @@ Planning complete | Development in progress
 | Phase | Status | Tasks | Notes |
 |-------|--------|-------|-------|
 | 0 - Scaffolding | In Progress | T-001-T-014 | T-012 now complete |
-| 1 - Header & Nav | Not Started | T-015-T-022 | Blocked until Phase 0 complete |
+| 1 - Header & Nav | Complete | T-015-T-022 | Dashboard shell, tabs, and date controls are live |
 | 2 - Overview KPIs | Not Started | T-023-T-034 | Blocked by Phase 1 |
 | 3 - Overview Charts | Not Started | T-035-T-050 | Blocked by Phase 2 |
 | 4 - Subscribers Tab | Not Started | T-051-T-068 | Blocked by Phase 1 |
@@ -34,9 +34,13 @@ Planning complete | Development in progress
 - Added QueryClient provider at app root
 - Added API routes for /api/subscribers, /api/content, and /api/revenue
 - Verified build and type-check after data layer additions
+- Added dashboard shell components (Header, TabNavigation, DateRangeFilter)
+- Added routed dashboard pages for overview, subscribers, content, revenue, reports, and insights
+- Wired manual refresh and last-updated state into header
+- Verified build and type-check after Phase 1 shell implementation
 
 ## In Progress
-- Next: T-013 and T-014 setup/documentation completion checks
+- Next: T-023 (reusable KPI Card component)
 
 ## Risks and Notes
 - No blockers currently
