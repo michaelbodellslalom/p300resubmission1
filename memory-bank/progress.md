@@ -18,7 +18,7 @@ Planning complete | Development in progress
 | 8 - Reports Tab | In Progress | T-117-T-130 | CSV export for all 3 datasets (T-117/T-122) |
 | 9 - Mobile and Responsive | Complete | T-131-T-142 | Completed through T-142 final mobile responsive QA sweep |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
-| 11 - Accessibility | In Progress | T-151-T-164 | T-151 through T-156 complete; T-157 Lighthouse optimization next |
+| 11 - Accessibility | In Progress | T-151-T-164 | T-151 through T-157 complete; T-158 code splitting next |
 | 12 - Testing | Not Started | T-165-T-180 | Blocked by Phase 11 |
 | 13 - Documentation | Not Started | T-181-T-190 | Can begin after core UI exists |
 | 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
@@ -96,9 +96,10 @@ Planning complete | Development in progress
 - Completed focus indicator QA pass by verifying keyboard focus ring visibility across critical controls and route-level navigation flow
 - Completed alt-text equivalent pass by adding descriptive aria-labels for all Recharts visualization panels used in dashboard tabs
 - Completed color-blind palette pass by adopting high-separation chart hues for categorical and multi-series views and adding dashed line differentiation for RPM in dual-axis chart
+- Completed Lighthouse optimization pass by enabling package import optimization and lazy-loading overview chart components; production Lighthouse reruns reached 0.96 performance on /dashboard
 
 ## In Progress
-- Next: T-157 (optimize Lighthouse score)
+- Next: T-158 (implement code splitting)
 
 ## Risks and Notes
 - No blockers currently

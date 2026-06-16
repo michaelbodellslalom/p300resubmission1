@@ -1,12 +1,29 @@
 "use client";
 
+import dynamic from 'next/dynamic';
+
 import { ChurnBreakdownTable } from '@/components/ChurnBreakdownTable';
 import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
-import { RevenueTrendChart } from '@/components/RevenueTrendChart';
-import { SubscriberTrendChart } from '@/components/SubscriberTrendChart';
+import { LoadingState } from '@/components/LoadingState';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
+
+const SubscriberTrendChart = dynamic(
+  () => import('@/components/SubscriberTrendChart').then((module) => module.SubscriberTrendChart),
+  {
+    ssr: false,
+    loading: () => <LoadingState label="Loading subscriber trend" />,
+  },
+);
+
+const RevenueTrendChart = dynamic(
+  () => import('@/components/RevenueTrendChart').then((module) => module.RevenueTrendChart),
+  {
+    ssr: false,
+    loading: () => <LoadingState label="Loading revenue trend" />,
+  },
+);
 
 function formatNumber(value: number): string {
   return new Intl.NumberFormat('en-US').format(Math.round(value));

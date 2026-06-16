@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-157: Optimize Lighthouse score**
+**T-158: Implement code splitting**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -69,13 +69,14 @@
 - T-154 complete: focus indicator behavior validated across skip link, nav controls, filters, and table interactions using keyboard traversal checks
 - T-155 complete: alt-text equivalent coverage added for dashboard visualizations via descriptive aria-labels on chart containers
 - T-156 complete: color-blind palette QA and remediation applied to multi-series/categorical charts with high-separation hues and non-color cue support
+- T-157 complete: Lighthouse optimization pass added targeted chart code-splitting and package import optimization with production re-checks
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-157 planning: Lighthouse performance/accessibility optimization baseline pass
+- T-158 planning: expand route-level and heavy-component code splitting strategy
 
 ## Blockers
 None
@@ -88,4 +89,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-156 complete; next T-157 Lighthouse optimization
+June 16, 2026 - T-157 complete; next T-158 code splitting
