@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-131: Mobile nav hamburger menu for smaller screens**
+**T-132: Mobile KPI stacking and spacing optimization**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -51,13 +51,14 @@
 - T-046 complete: no-data states validated and standardized for Overview charts and churn table
 - T-047 complete: chart surface, legend, tooltip, and series color polish applied
 - T-048 complete: chart responsiveness and readability validated at 320px, 375px, and 768px
+- T-131 complete: mobile hamburger navigation added with close-on-selection behavior
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-049 planning: verify chart reactivity under periodic polling and manual refresh
+- T-132 planning: optimize mobile KPI stacking and spacing across tab pages
 
 ## Blockers
 None
@@ -70,4 +71,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - All six tabs complete; Insights scatter+insight-cards+revenue-bars; Reports CSV exports
+June 16, 2026 - T-131 mobile hamburger menu complete; next T-132 mobile KPI stacking/spacing
