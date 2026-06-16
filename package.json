@@ -1,0 +1,44 @@
+{
+  "name": "p300-resubmission1",
+  "version": "1.0.0",
+  "description": "A real-time operational dashboard for content strategists and audience insights managers at media & communications organizations. Monitor subscriber health, analyze content performance, track ad revenue impact, and identify growth opportunities — all in one unified interface.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src --max-warnings 0",
+    "type-check": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mui/icons-material": "^9.1.1",
+    "@mui/material": "^9.1.1",
+    "@react-pdf/renderer": "^4.5.1",
+    "@tanstack/react-query": "^5.101.0",
+    "autoprefixer": "^10.5.0",
+    "date-fns": "^4.4.0",
+    "next": "^16.2.9",
+    "papaparse": "^5.5.3",
+    "postcss": "^8.5.15",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "recharts": "^3.8.1",
+    "tailwindcss": "^4.3.1",
+    "typescript": "^6.0.3",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@typescript-eslint/eslint-plugin": "^8.61.1",
+    "@typescript-eslint/parser": "^8.61.1",
+    "eslint": "^10.5.0",
+    "jest": "^30.4.2"
+  }
+}
