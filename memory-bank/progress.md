@@ -20,8 +20,8 @@ Planning complete | Development in progress
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
 | 11 - Accessibility | Complete | T-151-T-164 | Completed through T-164 (caching strategy + performance dashboard) |
 | 12 - Testing | Complete | T-165-T-180 | Completed through T-180 with expanded integration/export coverage |
-| 13 - Documentation | In Progress | T-181-T-190 | T-181 through T-185, T-187, and T-188 complete; T-190 visual review next |
-| 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
+| 13 - Documentation | Complete | T-181-T-190 | Completed through T-190 visual QA sweep |
+| 14 - Deployment | In Progress | T-191-T-198 | Deployment setup and launch tasks now active |
 
 ## Completed Work
 - Initialized repository and baseline docs
@@ -125,9 +125,10 @@ Planning complete | Development in progress
 - Completed T-185 by adding API route documentation with query params, examples, and response shapes
 - Completed T-187 by adding DEPLOYMENT.md runbook with release validation, Vercel steps, and rollback guidance
 - Completed T-188 by adding CHANGELOG.md with recent feature, testing, CI, and documentation milestones
+- Completed T-190 with route-level visual QA sweep across all dashboard tabs and navigation shell
 
 ## In Progress
-- Next: T-190 (final visual review + polish)
+- Next: T-191 (set up Vercel project)
 
 ## Risks and Notes
 - No blockers currently

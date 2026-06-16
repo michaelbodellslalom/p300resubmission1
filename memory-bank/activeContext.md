@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 13 Documentation & Final Polish** — Launch-path documentation tranche started
+**Phase 14 Deployment & Launch** — Final release execution in progress
 
 ## Next Task
-**T-190: Final visual review + polish**
+**T-191: Set up Vercel project**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -99,13 +99,14 @@
 - T-185 complete: API route contracts documented for subscribers/content/revenue endpoints in docs/API_ROUTES.md and linked from README
 - T-187 complete: deployment runbook created with validation gates, Vercel flow, post-deploy checks, and rollback steps
 - T-188 complete: root CHANGELOG added capturing recommendations feature, testing expansion, CI, and documentation milestones
+- T-190 complete: visual QA sweep validated headings/nav/main across all dashboard routes; existing non-blocking Recharts width/height warnings remain noted
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-190 planning: final visual QA and polish sweep before deployment tranche
+- T-191 planning: deployment environment setup and release path execution
 
 ## Blockers
 None
@@ -121,4 +122,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-188 complete; next T-190 final visual review
+June 16, 2026 - T-190 complete; next T-191 deployment setup
