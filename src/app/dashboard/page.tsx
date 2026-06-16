@@ -1,5 +1,6 @@
 "use client";
 
+import { ChurnBreakdownTable } from '@/components/ChurnBreakdownTable';
 import { ErrorState } from '@/components/ErrorState';
 import { KPICard } from '@/components/KPICard';
 import { RevenueTrendChart } from '@/components/RevenueTrendChart';
@@ -122,6 +123,17 @@ export default function OverviewPage() {
           isError={isRevenueError}
           onRetry={() => {
             void refetchRevenue();
+          }}
+        />
+      </section>
+
+      <section>
+        <ChurnBreakdownTable
+          data={subscriberData?.churnReasons ?? []}
+          isLoading={loadingSubscribers}
+          isError={isSubscriberError}
+          onRetry={() => {
+            void refetchSubscribers();
           }}
         />
       </section>

@@ -10,7 +10,7 @@ Planning complete | Development in progress
 | 0 - Scaffolding | In Progress | T-001-T-014 | T-012 now complete |
 | 1 - Header & Nav | Complete | T-015-T-022 | Dashboard shell, tabs, and date controls are live |
 | 2 - Overview KPIs | Complete | T-023-T-034 | KPI component, wiring, loading/error, responsive and style polish complete |
-| 3 - Overview Charts | In Progress | T-035-T-050 | Subscriber + revenue trend charts now live (T-035-T-039) |
+| 3 - Overview Charts | In Progress | T-035-T-050 | Subscriber/revenue charts and churn table shipped (T-035-T-042) |
 | 4 - Subscribers Tab | Not Started | T-051-T-068 | Blocked by Phase 1 |
 | 5 - Content Tab | Not Started | T-069-T-088 | Blocked by Phase 1 |
 | 6 - Revenue Tab | Not Started | T-089-T-104 | Blocked by Phase 1 |
@@ -54,12 +54,15 @@ Planning complete | Development in progress
 - Validated date-range filtering behavior for chart and KPI updates (7D smoke test)
 - Added RevenueTrendChart dual-axis visualization (Revenue + RPM)
 - Added revenue chart legend and tooltip value formatting
+- Added ChurnBreakdownTable component to Overview with loading/error/empty states
+- Added sortable churn columns for reason, share, and affected subscribers
+- Verified sorting interactions in browser QA pass
 - Fixed refresh timestamp click interception with pointer-events-safe label styling
 - Fixed header hydration mismatch for dynamic "Updated" timestamp text
 - Re-validated type-check and production build after chart integration
 
 ## In Progress
-- Next: T-040/T-041 (revenue range edge-case behavior and churn breakdown table)
+- Next: T-043/T-045 (range-aware churn table behavior and responsive layout refinement)
 
 ## Risks and Notes
 - No blockers currently
