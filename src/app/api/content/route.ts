@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import { getContentItems, getContentPerformanceByFormat } from '@/data/mock';
+import { API_CACHE_CONTROL } from '@/utils/cachePolicy';
 
 function getDateRange(searchParams: URLSearchParams): { start: string; end: string } {
   const end = searchParams.get('end') ?? new Date().toISOString().split('T')[0] ?? '';
@@ -22,9 +23,16 @@ export async function GET(request: NextRequest) {
 
   const filtered = getContentItems(dateRange, { format: contentFormat, type: contentType });
 
-  return NextResponse.json({
-    items: filtered,
-    totalItems: filtered.length,
-    byFormat: getContentPerformanceByFormat(filtered),
-  });
+  return NextResponse.json(
+    {
+      items: filtered,
+      totalItems: filtered.length,
+      byFormat: getContentPerformanceByFormat(filtered),
+    },
+    {
+      headers: {
+        'Cache-Control': API_CACHE_CONTROL,
+      },
+    },
+  );
 }

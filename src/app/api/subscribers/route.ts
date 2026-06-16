@@ -7,6 +7,7 @@ import {
   subscriberCohorts,
   subscriberTimeline,
 } from '@/data/mock';
+import { API_CACHE_CONTROL } from '@/utils/cachePolicy';
 
 function getDateRange(searchParams: URLSearchParams): { start: string; end: string } {
   const end = searchParams.get('end') ?? new Date().toISOString().split('T')[0] ?? '';
@@ -25,10 +26,17 @@ export async function GET(request: NextRequest) {
   const timeline = filterByDateRange(subscriberTimeline, dateRange);
   const overview = getOverviewKPIs(dateRange);
 
-  return NextResponse.json({
-    timeline,
-    cohorts: subscriberCohorts,
-    churnReasons: getChurnReasonsForRange(dateRange),
-    overview,
-  });
+  return NextResponse.json(
+    {
+      timeline,
+      cohorts: subscriberCohorts,
+      churnReasons: getChurnReasonsForRange(dateRange),
+      overview,
+    },
+    {
+      headers: {
+        'Cache-Control': API_CACHE_CONTROL,
+      },
+    },
+  );
 }

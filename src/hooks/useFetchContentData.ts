@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { contentMetrics, getContentItems } from '@/data/mock';
 import { useDashboardStore } from '@/store/dashboardStore';
+import { QUERY_GC_MS, QUERY_REFETCH_MS, QUERY_STALE_MS } from '@/utils/cachePolicy';
 
 const SIMULATED_LATENCY_MS = 120;
 
@@ -41,7 +42,8 @@ export function useFetchContentData() {
         totalItems: filtered.length,
       });
     },
-    staleTime: 30000,
-    refetchInterval: 60000,
+    staleTime: QUERY_STALE_MS,
+    gcTime: QUERY_GC_MS,
+    refetchInterval: QUERY_REFETCH_MS,
   });
 }

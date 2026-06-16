@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-163: Implement caching strategy**
+**T-165: Set up Jest + React Testing Library**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -75,13 +75,15 @@
 - T-160 complete: client-side performance monitoring added for web vitals and route-change timing with in-browser metric queueing
 - T-161 complete: mock data query-path optimization pass reduced redundant array remaps/date parsing and scoped format aggregations to active date ranges
 - T-162 complete: 3G constrained load tests executed across overview/revenue/insights with baseline metrics captured and bottlenecks documented
+- T-163 complete: caching strategy implemented with shared API cache-control policy and aligned React Query stale/refetch/gc timings
+- T-164 complete: performance dashboard added to Reports tab to surface captured web-vital and route-change metrics in-session
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-163 planning: caching strategy for API responses and query-level revalidation behavior
+- T-165 planning: testing foundation audit for Jest and React Testing Library setup completeness
 
 ## Blockers
 None
@@ -97,4 +99,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-162 complete; next T-163 caching strategy
+June 16, 2026 - T-163/T-164 complete; next T-165 testing setup

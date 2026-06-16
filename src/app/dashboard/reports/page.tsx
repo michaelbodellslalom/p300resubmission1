@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 
+import { PerformanceDashboard } from '@/components/PerformanceDashboard';
 import { useFetchContentData } from '@/hooks/useFetchContentData';
 import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
@@ -145,6 +146,10 @@ export default function ReportsPage() {
             PDF snapshots, scheduled email reports, and shareable dashboard links are planned for a future release.
           </p>
         </div>
+      </section>
+
+      <section>
+        <PerformanceDashboard />
       </section>
     </div>
   );
