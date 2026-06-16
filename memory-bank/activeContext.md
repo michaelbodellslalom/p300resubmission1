@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-165: Set up Jest + React Testing Library**
+**T-166: Write Zustand store tests**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -77,13 +77,14 @@
 - T-162 complete: 3G constrained load tests executed across overview/revenue/insights with baseline metrics captured and bottlenecks documented
 - T-163 complete: caching strategy implemented with shared API cache-control policy and aligned React Query stale/refetch/gc timings
 - T-164 complete: performance dashboard added to Reports tab to surface captured web-vital and route-change metrics in-session
+- T-165 complete: Jest + React Testing Library configured with working jsdom environment and initial passing component smoke tests
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-165 planning: testing foundation audit for Jest and React Testing Library setup completeness
+- T-166 planning: Zustand store behavior tests for tab/filter/date/refresh actions
 
 ## Blockers
 None
@@ -99,4 +100,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-163/T-164 complete; next T-165 testing setup
+June 16, 2026 - T-165 complete; next T-166 store tests

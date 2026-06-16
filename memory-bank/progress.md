@@ -19,7 +19,7 @@ Planning complete | Development in progress
 | 9 - Mobile and Responsive | Complete | T-131-T-142 | Completed through T-142 final mobile responsive QA sweep |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
 | 11 - Accessibility | Complete | T-151-T-164 | Completed through T-164 (caching strategy + performance dashboard) |
-| 12 - Testing | In Progress | T-165-T-180 | T-165 setup queued next |
+| 12 - Testing | In Progress | T-165-T-180 | T-165 complete; T-166 Zustand store tests next |
 | 13 - Documentation | Not Started | T-181-T-190 | Can begin after core UI exists |
 | 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
 
@@ -104,9 +104,10 @@ Planning complete | Development in progress
 - Completed constrained-network testing pass (3G simulated) across overview/revenue/insights and documented baseline metrics plus top bottlenecks (unused JS, bootup time, main-thread work)
 - Completed caching strategy with shared API cache-control headers plus standardized React Query stale/refetch/gc policy constants
 - Completed performance dashboard implementation in Reports tab to visualize recent web-vital and route-change metrics captured by the monitoring layer
+- Completed test foundation setup with Jest + React Testing Library (jsdom config, setup file, and passing component smoke tests)
 
 ## In Progress
-- Next: T-165 (set up Jest + React Testing Library)
+- Next: T-166 (write Zustand store tests)
 
 ## Risks and Notes
 - No blockers currently
