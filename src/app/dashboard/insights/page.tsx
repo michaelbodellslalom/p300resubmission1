@@ -166,7 +166,7 @@ export default function InsightsPage() {
             <p className="text-sm text-slate-300">Content pieces driving the most new subscriber acquisitions</p>
           </div>
           <div className="overflow-x-auto rounded-md border border-slate-800/80">
-            <table className="min-w-full text-left text-xs sm:text-sm">
+            <table className="min-w-[42rem] text-left text-xs sm:min-w-full sm:text-sm">
               <thead>
                 <tr className="border-b border-slate-700 text-xs uppercase tracking-wide text-slate-400">
                   <th className="whitespace-nowrap pb-2 pl-2 pr-4 sm:pl-3">Title</th>

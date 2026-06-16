@@ -64,12 +64,12 @@ export function ChurnReasonChart({
         <p className="text-xs uppercase tracking-wide text-rose-200/80">Churn Drivers</p>
         <p className="text-sm text-slate-300">Breakdown of subscriber churn by primary reason</p>
       </div>
-      <div className="h-[82%] w-full min-h-52 min-w-0">
-        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+      <div className="h-[82%] w-full min-h-48 min-w-0 sm:min-h-52">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={192}>
           <BarChart
             data={sorted}
             layout="vertical"
-            margin={{ top: 4, right: 40, bottom: 4, left: 0 }}
+            margin={{ top: 4, right: 18, bottom: 4, left: 0 }}
           >
             <CartesianGrid stroke="#1E293B" strokeDasharray="3 6" horizontal={false} />
             <XAxis
@@ -84,7 +84,10 @@ export function ChurnReasonChart({
               dataKey="reason"
               stroke="#64748B"
               tick={{ fill: '#94A3B8', fontSize: 10 }}
-              width={148}
+              tickFormatter={(value: string) =>
+                value.length > 15 ? `${value.slice(0, 15)}…` : value
+              }
+              width={112}
               interval={0}
             />
             <Tooltip

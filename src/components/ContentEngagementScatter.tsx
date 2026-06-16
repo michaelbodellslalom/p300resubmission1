@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from 'react';
+
 import {
   CartesianGrid,
   ResponsiveContainer,
@@ -37,6 +39,12 @@ export function ContentEngagementScatter({
   isError,
   onRetry,
 }: ContentScatterProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   if (isLoading) return <LoadingState label="Loading engagement correlation" />;
   if (isError) return <ErrorState message="Failed to load correlation data." onRetry={onRetry} />;
   if (!data.length) return (
@@ -45,6 +53,7 @@ export function ContentEngagementScatter({
       description="Expand the date range to compute engagement vs revenue correlations."
     />
   );
+  if (!isMounted) return <LoadingState label="Preparing engagement correlation" />;
 
   const formats = [...new Set(data.map((d) => d.format))];
 
@@ -56,7 +65,7 @@ export function ContentEngagementScatter({
       </div>
 
       {/* Legend */}
-      <div className="mb-2 flex flex-wrap gap-3">
+      <div className="mb-2 flex flex-wrap gap-x-3 gap-y-1.5">
         {formats.map((fmt) => (
           <span key={fmt} className="flex items-center gap-1.5 text-xs text-slate-400">
             <span
@@ -68,8 +77,8 @@ export function ContentEngagementScatter({
         ))}
       </div>
 
-      <div className="h-64 w-full min-w-0 sm:h-72">
-        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+      <div className="h-[18rem] w-full min-w-0 sm:h-72">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={180}>
           <ScatterChart margin={{ top: 8, right: 12, bottom: 8, left: -8 }}>
             <CartesianGrid stroke="#1E293B" strokeDasharray="3 6" />
             <XAxis

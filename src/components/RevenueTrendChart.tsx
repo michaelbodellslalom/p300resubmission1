@@ -87,14 +87,14 @@ export function RevenueTrendChart({
   }
 
   return (
-    <div className="card h-64 border border-teal-500/25 bg-gradient-to-b from-teal-500/8 via-slate-800/70 to-slate-900/40 sm:h-72">
+    <div className="card h-[18rem] border border-teal-500/25 bg-gradient-to-b from-teal-500/8 via-slate-800/70 to-slate-900/40 sm:h-72">
       <div className="mb-3">
         <p className="text-xs uppercase tracking-wide text-teal-200/80">Revenue Trend</p>
         <p className="text-sm text-slate-300">Total revenue and RPM across the selected date range</p>
       </div>
 
-      <div className="h-[78%] w-full min-h-44 min-w-0 sm:h-[84%] sm:min-h-52">
-        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={208}>
+      <div className="h-[79%] w-full min-h-40 min-w-0 sm:h-[84%] sm:min-h-52">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={180}>
           <ComposedChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -4 }}>
             <defs>
               <linearGradient id="revenueBarGradient" x1="0" y1="0" x2="0" y2="1">
@@ -148,7 +148,7 @@ export function RevenueTrendChart({
               formatter={(value) => (
                 <span className="text-xs font-semibold tracking-wide text-slate-300">{value}</span>
               )}
-              wrapperStyle={{ fontSize: '12px', color: '#CBD5E1' }}
+              wrapperStyle={{ fontSize: '11px', color: '#CBD5E1' }}
             />
             <Bar
               yAxisId="revenue"

@@ -45,8 +45,8 @@ export function CohortRetentionChart({
         <p className="text-xs uppercase tracking-wide text-cyan-200/80">Cohort Retention</p>
         <p className="text-sm text-slate-300">4-week and 12-week retention rates by cohort month</p>
       </div>
-      <div className="h-[82%] w-full min-h-52 min-w-0">
-        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
+      <div className="h-[82%] w-full min-h-48 min-w-0 sm:min-h-52">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={192}>
           <BarChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -16 }}>
             <defs>
               <linearGradient id="w4Gradient" x1="0" y1="0" x2="0" y2="1">
@@ -93,8 +93,8 @@ export function CohortRetentionChart({
                 <span className="text-xs font-semibold text-slate-300">{value}</span>
               )}
             />
-            <Bar dataKey="week4Retention" name="4-Week Retention" fill="url(#w4Gradient)" radius={[4, 4, 0, 0]} />
-            <Bar dataKey="week12Retention" name="12-Week Retention" fill="url(#w12Gradient)" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="week4Retention" name="4W Retention" fill="url(#w4Gradient)" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="week12Retention" name="12W Retention" fill="url(#w12Gradient)" radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>
