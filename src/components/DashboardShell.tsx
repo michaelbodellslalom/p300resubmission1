@@ -38,7 +38,7 @@ export function DashboardShell({ children }: DashboardShellProps) {
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <Header />
       <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className="px-4 py-5 md:px-8 md:py-8">{children}</main>
+      <main className="px-3 py-4 sm:px-4 sm:py-5 md:px-8 md:py-8">{children}</main>
     </div>
   );
 }
