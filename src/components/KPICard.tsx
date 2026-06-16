@@ -58,7 +58,7 @@ export function KPICard({
   isLoading = false,
 }: KPICardProps) {
   if (isLoading) {
-    return <LoadingState label={`Loading ${label}`} />;
+    return <LoadingState label={`Loading ${label}`} variant="kpi" />;
   }
 
   return (
