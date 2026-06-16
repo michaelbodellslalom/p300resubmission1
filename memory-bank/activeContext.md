@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-162: Test load time on 3G**
+**T-163: Implement caching strategy**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -74,13 +74,14 @@
 - T-159 complete: dynamic import applied to CSV export library so Papa Parse loads only when export actions are invoked
 - T-160 complete: client-side performance monitoring added for web vitals and route-change timing with in-browser metric queueing
 - T-161 complete: mock data query-path optimization pass reduced redundant array remaps/date parsing and scoped format aggregations to active date ranges
+- T-162 complete: 3G constrained load tests executed across overview/revenue/insights with baseline metrics captured and bottlenecks documented
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-162 planning: constrained-network load testing and bottleneck capture (3G profile)
+- T-163 planning: caching strategy for API responses and query-level revalidation behavior
 
 ## Blockers
 None
@@ -92,6 +93,8 @@ None
 - Real-time polling remains planned for later phase
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 - Runtime performance metrics are available at window.__dashboardPerfMetrics during active sessions
+- 3G test snapshot (simulated 400Kbps/300ms RTT): /dashboard perf 0.69 (LCP 13.1s), /dashboard/revenue perf 0.71 (LCP 10.8s), /dashboard/insights perf 0.72 (LCP 10.5s)
+- Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-161 complete; next T-162 3G load testing
+June 16, 2026 - T-162 complete; next T-163 caching strategy
