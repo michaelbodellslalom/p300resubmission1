@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-159: Dynamic imports for heavy libraries**
+**T-160: Set up performance monitoring**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -71,13 +71,14 @@
 - T-156 complete: color-blind palette QA and remediation applied to multi-series/categorical charts with high-separation hues and non-color cue support
 - T-157 complete: Lighthouse optimization pass added targeted chart code-splitting and package import optimization with production re-checks
 - T-158 complete: route-level code splitting expanded with dynamic chart imports on overview, subscribers, revenue, and insights routes
+- T-159 complete: dynamic import applied to CSV export library so Papa Parse loads only when export actions are invoked
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-159 planning: dynamic import strategy for remaining heavy libraries and export flows
+- T-160 planning: lightweight performance monitoring hooks and baseline metric capture strategy
 
 ## Blockers
 None
@@ -90,4 +91,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-158 complete; next T-159 dynamic imports
+June 16, 2026 - T-159 complete; next T-160 performance monitoring

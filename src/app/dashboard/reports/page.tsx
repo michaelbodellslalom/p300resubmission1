@@ -7,8 +7,9 @@ import { useFetchRevenueData } from '@/hooks/useFetchRevenueData';
 import { useFetchSubscriberData } from '@/hooks/useFetchSubscriberData';
 import { useDashboardStore } from '@/store/dashboardStore';
 
-function downloadCSV(filename: string, rows: string[][]): void {
-  const csv = rows.map((r) => r.map((c) => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
+async function downloadCSV(filename: string, rows: Array<Array<string | number>>): Promise<void> {
+  const { unparse } = await import('papaparse');
+  const csv = unparse(rows);
   const blob = new Blob([csv], { type: 'text/csv' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -28,46 +29,55 @@ export default function ReportsPage() {
 
   const isLoading = loadingSubs || loadingContent || loadingRev;
 
-  const exportSubscribers = () => {
+  const exportSubscribers = async () => {
     if (!subData) return;
     setExporting('subscribers');
-    const rows = [
-      ['Date', 'Total Subscribers', 'New Subscribers', 'Churned', 'Churn Rate %', 'Net Growth'],
-      ...subData.timeline.map((p) => [
-        p.date, p.totalSubscribers, p.newSubscribers, p.churnedSubscribers,
-        p.churnRate.toFixed(3), p.netGrowth,
-      ]),
-    ] as string[][];
-    downloadCSV(`subscribers_${dateRange.start}_${dateRange.end}.csv`, rows);
-    setTimeout(() => setExporting(null), 600);
+    try {
+      const rows = [
+        ['Date', 'Total Subscribers', 'New Subscribers', 'Churned', 'Churn Rate %', 'Net Growth'],
+        ...subData.timeline.map((p) => [
+          p.date, p.totalSubscribers, p.newSubscribers, p.churnedSubscribers,
+          p.churnRate.toFixed(3), p.netGrowth,
+        ]),
+      ];
+      await downloadCSV(`subscribers_${dateRange.start}_${dateRange.end}.csv`, rows);
+    } finally {
+      setTimeout(() => setExporting(null), 400);
+    }
   };
 
-  const exportContent = () => {
+  const exportContent = async () => {
     if (!contentData) return;
     setExporting('content');
-    const rows = [
-      ['ID', 'Title', 'Format', 'Type', 'Publish Date', 'Views', 'Unique Viewers',
-       'Engagement Rate %', 'Avg Session Min', 'Attributed New Subs', 'Ad Revenue', 'RPM'],
-      ...contentData.items.map((i) => [
-        i.id, i.title, i.format, i.type, i.publishDate, i.views, i.uniqueViewers,
-        i.engagementRate, i.avgSessionMinutes, i.attributedNewSubscribers, i.adRevenue, i.rpm,
-      ]),
-    ] as string[][];
-    downloadCSV(`content_${dateRange.start}_${dateRange.end}.csv`, rows);
-    setTimeout(() => setExporting(null), 600);
+    try {
+      const rows = [
+        ['ID', 'Title', 'Format', 'Type', 'Publish Date', 'Views', 'Unique Viewers',
+         'Engagement Rate %', 'Avg Session Min', 'Attributed New Subs', 'Ad Revenue', 'RPM'],
+        ...contentData.items.map((i) => [
+          i.id, i.title, i.format, i.type, i.publishDate, i.views, i.uniqueViewers,
+          i.engagementRate, i.avgSessionMinutes, i.attributedNewSubscribers, i.adRevenue, i.rpm,
+        ]),
+      ];
+      await downloadCSV(`content_${dateRange.start}_${dateRange.end}.csv`, rows);
+    } finally {
+      setTimeout(() => setExporting(null), 400);
+    }
   };
 
-  const exportRevenue = () => {
+  const exportRevenue = async () => {
     if (!revData) return;
     setExporting('revenue');
-    const rows = [
-      ['Date', 'Ad Revenue', 'Sponsored Revenue', 'Subscription Proxy', 'Total Revenue', 'RPM'],
-      ...revData.timeline.map((p) => [
-        p.date, p.adRevenue, p.sponsoredRevenue, p.subscriptionRevenueProxy, p.totalRevenue, p.rpm,
-      ]),
-    ] as string[][];
-    downloadCSV(`revenue_${dateRange.start}_${dateRange.end}.csv`, rows);
-    setTimeout(() => setExporting(null), 600);
+    try {
+      const rows = [
+        ['Date', 'Ad Revenue', 'Sponsored Revenue', 'Subscription Proxy', 'Total Revenue', 'RPM'],
+        ...revData.timeline.map((p) => [
+          p.date, p.adRevenue, p.sponsoredRevenue, p.subscriptionRevenueProxy, p.totalRevenue, p.rpm,
+        ]),
+      ];
+      await downloadCSV(`revenue_${dateRange.start}_${dateRange.end}.csv`, rows);
+    } finally {
+      setTimeout(() => setExporting(null), 400);
+    }
   };
 
   const exportActions = [
