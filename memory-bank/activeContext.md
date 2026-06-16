@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-154: Create focus indicators**
+**T-156: Test color-blind palette**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -66,13 +66,15 @@
 - T-151 complete: accessibility baseline remediation pass added skip link, focus-visible rings, aria-current nav semantics, status announcements, and table captions
 - T-152 complete: ARIA labels and sort semantics expanded for mobile menu control and sortable table headers
 - T-153 complete: keyboard navigation remediation added Enter/Escape menu behavior with reliable focus return and keyboard QA across all dashboard routes
+- T-154 complete: focus indicator behavior validated across skip link, nav controls, filters, and table interactions using keyboard traversal checks
+- T-155 complete: alt-text equivalent coverage added for dashboard visualizations via descriptive aria-labels on chart containers
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-154 planning: focus indicator consistency audit and polish across remaining interactive controls
+- T-156 planning: color-blind accessibility review for chart and status palettes
 
 ## Blockers
 None
@@ -85,4 +87,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-152/T-153 complete; next T-154 focus indicator polish
+June 16, 2026 - T-154/T-155 complete; next T-156 color-blind palette QA

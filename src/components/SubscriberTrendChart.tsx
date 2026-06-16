@@ -81,7 +81,11 @@ export function SubscriberTrendChart({
   }
 
   return (
-    <div className="card h-[18rem] border border-cyan-500/25 bg-gradient-to-b from-cyan-500/8 via-slate-800/70 to-slate-900/40 sm:h-72">
+    <div
+      role="img"
+      aria-label="Subscriber trend chart showing total subscribers across the selected date range."
+      className="card h-[18rem] border border-cyan-500/25 bg-gradient-to-b from-cyan-500/8 via-slate-800/70 to-slate-900/40 sm:h-72"
+    >
       <div className="mb-3">
         <p className="text-xs uppercase tracking-wide text-cyan-200/80">Subscriber Trend</p>
         <p className="text-sm text-slate-300">Total subscribers over the selected time range</p>

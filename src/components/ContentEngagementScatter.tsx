@@ -60,7 +60,11 @@ export function ContentEngagementScatter({
   const formats = [...new Set(data.map((d) => d.format))];
 
   return (
-    <div className="card border border-indigo-500/20 bg-gradient-to-b from-indigo-500/5 via-slate-800/70 to-slate-900/40">
+    <div
+      role="img"
+      aria-label="Views versus engagement scatter chart, with bubble size representing ad revenue and colors representing content format."
+      className="card border border-indigo-500/20 bg-gradient-to-b from-indigo-500/5 via-slate-800/70 to-slate-900/40"
+    >
       <div className="mb-3">
         <p className="text-xs uppercase tracking-wide text-indigo-200/80">Views vs Engagement</p>
         <p className="text-sm text-slate-300">Scatter of content views against engagement rate, sized by ad revenue</p>

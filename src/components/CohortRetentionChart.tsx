@@ -42,7 +42,11 @@ export function CohortRetentionChart({
   if (!isMounted) return <LoadingState label="Preparing cohort chart" />;
 
   return (
-    <div className="card h-72 border border-cyan-500/20 bg-gradient-to-b from-cyan-500/5 via-slate-800/70 to-slate-900/40 sm:h-80">
+    <div
+      role="img"
+      aria-label="Cohort retention chart comparing 4-week and 12-week retention by cohort month."
+      className="card h-72 border border-cyan-500/20 bg-gradient-to-b from-cyan-500/5 via-slate-800/70 to-slate-900/40 sm:h-80"
+    >
       <div className="mb-3">
         <p className="text-xs uppercase tracking-wide text-cyan-200/80">Cohort Retention</p>
         <p className="text-sm text-slate-300">4-week and 12-week retention rates by cohort month</p>

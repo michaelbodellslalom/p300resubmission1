@@ -61,7 +61,11 @@ export function ChurnReasonChart({
   const sorted = [...data].sort((a, b) => b.percentage - a.percentage);
 
   return (
-    <div className="card h-72 border border-rose-500/20 bg-gradient-to-b from-rose-500/5 via-slate-800/70 to-slate-900/40 sm:h-80">
+    <div
+      role="img"
+      aria-label="Churn drivers chart showing churn share percentages by primary churn reason."
+      className="card h-72 border border-rose-500/20 bg-gradient-to-b from-rose-500/5 via-slate-800/70 to-slate-900/40 sm:h-80"
+    >
       <div className="mb-3">
         <p className="text-xs uppercase tracking-wide text-rose-200/80">Churn Drivers</p>
         <p className="text-sm text-slate-300">Breakdown of subscriber churn by primary reason</p>

@@ -92,7 +92,11 @@ export function RevenueTrendChart({
   }
 
   return (
-    <div className="card h-[18rem] border border-teal-500/25 bg-gradient-to-b from-teal-500/8 via-slate-800/70 to-slate-900/40 sm:h-72">
+    <div
+      role="img"
+      aria-label="Revenue trend chart comparing total revenue bars and RPM line over the selected date range."
+      className="card h-[18rem] border border-teal-500/25 bg-gradient-to-b from-teal-500/8 via-slate-800/70 to-slate-900/40 sm:h-72"
+    >
       <div className="mb-3">
         <p className="text-xs uppercase tracking-wide text-teal-200/80">Revenue Trend</p>
         <p className="text-sm text-slate-300">Total revenue and RPM across the selected date range</p>
