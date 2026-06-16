@@ -11,6 +11,19 @@ interface KPICardProps {
   isLoading?: boolean;
 }
 
+function containerClass(tone: KPICardProps['tone'] = 'neutral'): string {
+  if (tone === 'success') {
+    return 'border-emerald-500/30 bg-gradient-to-b from-emerald-500/8 to-slate-900/40';
+  }
+  if (tone === 'warning') {
+    return 'border-amber-500/30 bg-gradient-to-b from-amber-500/8 to-slate-900/40';
+  }
+  if (tone === 'info') {
+    return 'border-cyan-500/30 bg-gradient-to-b from-cyan-500/10 to-slate-900/40';
+  }
+  return 'border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40';
+}
+
 function toneClass(tone: KPICardProps['tone'] = 'neutral'): string {
   if (tone === 'success') return 'text-emerald-400';
   if (tone === 'warning') return 'text-amber-400';
@@ -49,7 +62,9 @@ export function KPICard({
   }
 
   return (
-    <article className="card flex h-full min-h-36 flex-col justify-between">
+    <article
+      className={`card flex h-full min-h-36 flex-col justify-between border shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-cyan-500/10 ${containerClass(tone)}`}
+    >
       <p className="text-xs uppercase tracking-wide text-slate-400">{label}</p>
 
       <p className={`mt-2 text-2xl font-bold md:text-3xl ${toneClass(tone)}`}>{value}</p>

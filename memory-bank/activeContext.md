@@ -4,7 +4,7 @@
 **Phase 2: Overview KPIs** 🚧 IN PROGRESS
 
 ## Next Task
-**T-032: KPI visual style refinement and hover polish**
+**T-034: Final Phase 2 KPI QA pass before charts**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -36,12 +36,14 @@
 - T-029 complete: KPI loading state upgraded to reusable skeleton component
 - T-030 complete: KPI error state added with retry action
 - T-031 complete: responsive KPI grid/card layout validated and polished
+- T-032 complete: KPI visual style and hover polish pass applied
+- T-033 complete: trend indicator behavior validated in KPI cards
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
  - Production build and type-check verified after KPI refactor
 
 ## What's In Progress
-- Preparing KPI visual style refinement pass
+- Preparing final KPI QA pass before Phase 3 charts
 
 ## Blockers
 None
@@ -53,4 +55,4 @@ None
 - Real-time polling remains planned for later phase
 
 ## Last Updated
-June 16, 2026 - T-031 complete, ready for T-032
+June 16, 2026 - T-032/T-033 complete, ready for T-034
