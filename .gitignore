@@ -45,6 +45,7 @@ Thumbs.db
 # Build artifacts
 .turbo/
 turbo.json.bak
+*.tsbuildinfo
 
 # Environment
 .env

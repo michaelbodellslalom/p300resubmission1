@@ -7,7 +7,7 @@ Planning complete | Development in progress
 
 | Phase | Status | Tasks | Notes |
 |-------|--------|-------|-------|
-| 0 - Scaffolding | In Progress | T-001-T-014 | T-007 now complete |
+| 0 - Scaffolding | In Progress | T-001-T-014 | T-012 now complete |
 | 1 - Header & Nav | Not Started | T-015-T-022 | Blocked until Phase 0 complete |
 | 2 - Overview KPIs | Not Started | T-023-T-034 | Blocked by Phase 1 |
 | 3 - Overview Charts | Not Started | T-035-T-050 | Blocked by Phase 2 |
@@ -30,15 +30,20 @@ Planning complete | Development in progress
 - Added robust mock data generators for subscribers, content, revenue, cohorts, and churn reasons
 - Added reusable mock selectors for KPIs, top content, and format performance
 - Added Zustand global dashboard store for tab, filter, date range, and refresh state
+- Added React Query hooks for subscriber, content, and revenue datasets
+- Added QueryClient provider at app root
+- Added API routes for /api/subscribers, /api/content, and /api/revenue
+- Verified build and type-check after data layer additions
 
 ## In Progress
-- Next: T-009 (subscriber data hook using React Query)
+- Next: T-013 and T-014 setup/documentation completion checks
 
 ## Risks and Notes
 - No blockers currently
-- API routes and hooks are still pending (T-009 to T-012)
+- API routes and hooks are now complete for mock MVP
 
 ## Commits Made
 - Initial scaffold and planning docs
 - Next.js initialization and setup
 - Configuration fixes for Tailwind and TypeScript
+- Typed mock data and Zustand store (T-007/T-008)
