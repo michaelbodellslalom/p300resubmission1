@@ -17,6 +17,7 @@ import {
 import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { type RevenueSnapshot } from '@/types/dashboard';
 
 interface RevenueTrendChartProps {
@@ -26,8 +27,11 @@ interface RevenueTrendChartProps {
   onRetry?: () => void;
 }
 
-function formatDateLabel(value: string): string {
+function formatDateLabel(value: string, isMobile: boolean): string {
   const date = new Date(value);
+  if (isMobile) {
+    return date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+  }
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
@@ -55,6 +59,7 @@ export function RevenueTrendChart({
   onRetry,
 }: RevenueTrendChartProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsMounted(true);
@@ -105,24 +110,27 @@ export function RevenueTrendChart({
             <CartesianGrid stroke="#1E293B" strokeDasharray="4 6" vertical={false} />
             <XAxis
               dataKey="date"
-              tickFormatter={formatDateLabel}
+              tickFormatter={(value) => formatDateLabel(String(value), isMobile)}
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 11 }}
-              minTickGap={24}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 10 : 11 }}
+              minTickGap={isMobile ? 34 : 24}
+              tickMargin={6}
               interval="preserveStartEnd"
             />
             <YAxis
               yAxisId="revenue"
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 11 }}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 10 : 11 }}
               tickFormatter={formatCompactCurrency}
+              width={isMobile ? 44 : 58}
             />
             <YAxis
               yAxisId="rpm"
               orientation="right"
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 11 }}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 10 : 11 }}
               tickFormatter={(value) => `$${Number(value).toFixed(0)}`}
+              width={isMobile ? 28 : 42}
             />
             <Tooltip
               cursor={{ fill: '#0F172A', opacity: 0.45 }}
@@ -132,7 +140,7 @@ export function RevenueTrendChart({
                 borderRadius: '8px',
                 color: '#E2E8F0',
               }}
-              labelFormatter={(label) => formatDateLabel(String(label))}
+              labelFormatter={(label) => formatDateLabel(String(label), false)}
               formatter={(value, name) => {
                 const numericValue = typeof value === 'number' ? value : Number(value ?? 0);
                 if (name === 'RPM') {
@@ -148,7 +156,7 @@ export function RevenueTrendChart({
               formatter={(value) => (
                 <span className="text-xs font-semibold tracking-wide text-slate-300">{value}</span>
               )}
-              wrapperStyle={{ fontSize: '11px', color: '#CBD5E1' }}
+              wrapperStyle={{ fontSize: isMobile ? '10px' : '11px', color: '#CBD5E1' }}
             />
             <Bar
               yAxisId="revenue"

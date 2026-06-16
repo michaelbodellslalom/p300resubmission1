@@ -16,6 +16,7 @@ import {
 import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { type ChurnReason } from '@/types/dashboard';
 
 interface ChurnReasonChartProps {
@@ -43,6 +44,7 @@ export function ChurnReasonChart({
   onRetry,
 }: ChurnReasonChartProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useIsMobile();
   useEffect(() => { setIsMounted(true); }, []);
 
   if (isLoading) return <LoadingState label="Loading churn reason chart" />;
@@ -75,19 +77,20 @@ export function ChurnReasonChart({
             <XAxis
               type="number"
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 11 }}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 10 : 11 }}
               tickFormatter={(v) => `${v}%`}
               domain={[0, 'dataMax + 4']}
+              tickMargin={6}
             />
             <YAxis
               type="category"
               dataKey="reason"
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 10 }}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 9 : 10 }}
               tickFormatter={(value: string) =>
-                value.length > 15 ? `${value.slice(0, 15)}…` : value
+                value.length > (isMobile ? 12 : 15) ? `${value.slice(0, isMobile ? 12 : 15)}…` : value
               }
-              width={112}
+              width={isMobile ? 92 : 112}
               interval={0}
             />
             <Tooltip

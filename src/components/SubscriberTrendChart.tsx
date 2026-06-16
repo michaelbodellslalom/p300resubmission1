@@ -16,6 +16,7 @@ import {
 import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { type SubscriberSnapshot } from '@/types/dashboard';
 
 interface SubscriberTrendChartProps {
@@ -25,8 +26,11 @@ interface SubscriberTrendChartProps {
   onRetry?: () => void;
 }
 
-function formatDateLabel(value: string): string {
+function formatDateLabel(value: string, isMobile: boolean): string {
   const date = new Date(value);
+  if (isMobile) {
+    return date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+  }
   return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
@@ -44,6 +48,7 @@ export function SubscriberTrendChart({
   onRetry,
 }: SubscriberTrendChartProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsMounted(true);
@@ -94,16 +99,18 @@ export function SubscriberTrendChart({
           <CartesianGrid stroke="#1E293B" strokeDasharray="3 6" vertical={false} />
           <XAxis
             dataKey="date"
-            tickFormatter={formatDateLabel}
+            tickFormatter={(value) => formatDateLabel(String(value), isMobile)}
             stroke="#64748B"
-            tick={{ fill: '#94A3B8', fontSize: 11 }}
-            minTickGap={24}
+            tick={{ fill: '#94A3B8', fontSize: isMobile ? 10 : 11 }}
+            minTickGap={isMobile ? 34 : 24}
+            tickMargin={6}
             interval="preserveStartEnd"
           />
           <YAxis
             stroke="#64748B"
-            tick={{ fill: '#94A3B8', fontSize: 11 }}
+            tick={{ fill: '#94A3B8', fontSize: isMobile ? 10 : 11 }}
             tickFormatter={formatCompactNumber}
+            width={isMobile ? 42 : 54}
           />
           <Tooltip
             cursor={{ stroke: '#155E75', strokeDasharray: '4 4' }}
@@ -113,7 +120,7 @@ export function SubscriberTrendChart({
               borderRadius: '8px',
               color: '#E2E8F0',
             }}
-            labelFormatter={(label) => formatDateLabel(String(label))}
+            labelFormatter={(label) => formatDateLabel(String(label), false)}
             formatter={(value) => {
               const numericValue =
                 typeof value === 'number' ? value : Number(value ?? 0);

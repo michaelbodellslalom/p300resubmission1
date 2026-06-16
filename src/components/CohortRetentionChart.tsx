@@ -16,6 +16,7 @@ import {
 import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { type SubscriberCohort } from '@/types/dashboard';
 
 interface CohortRetentionChartProps {
@@ -32,6 +33,7 @@ export function CohortRetentionChart({
   onRetry,
 }: CohortRetentionChartProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useIsMobile();
   useEffect(() => { setIsMounted(true); }, []);
 
   if (isLoading) return <LoadingState label="Loading cohort retention" />;
@@ -62,15 +64,23 @@ export function CohortRetentionChart({
             <XAxis
               dataKey="cohortMonth"
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 10 }}
-              minTickGap={28}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 9 : 10 }}
+              tickFormatter={(value: string) => {
+                const date = new Date(`${value}-01`);
+                return Number.isNaN(date.getTime())
+                  ? value
+                  : date.toLocaleDateString('en-US', { month: 'short' });
+              }}
+              minTickGap={isMobile ? 18 : 28}
+              tickMargin={6}
               interval="preserveStartEnd"
             />
             <YAxis
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 11 }}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 10 : 11 }}
               tickFormatter={(v) => `${v}%`}
               domain={[0, 100]}
+              width={isMobile ? 34 : 46}
             />
             <Tooltip
               cursor={{ fill: '#0F172A', opacity: 0.5 }}
@@ -88,10 +98,11 @@ export function CohortRetentionChart({
             <Legend
               verticalAlign="top"
               height={22}
-              iconSize={10}
+              iconSize={isMobile ? 8 : 10}
               formatter={(value) => (
                 <span className="text-xs font-semibold text-slate-300">{value}</span>
               )}
+              wrapperStyle={{ fontSize: isMobile ? '10px' : '11px' }}
             />
             <Bar dataKey="week4Retention" name="4W Retention" fill="url(#w4Gradient)" radius={[4, 4, 0, 0]} />
             <Bar dataKey="week12Retention" name="12W Retention" fill="url(#w12Gradient)" radius={[4, 4, 0, 0]} />

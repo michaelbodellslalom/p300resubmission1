@@ -16,7 +16,7 @@ Planning complete | Development in progress
 | 6 - Revenue Tab | In Progress | T-089-T-104 | KPIs, RevenueTrendChart, format revenue table shipped (T-089-T-097) |
 | 7 - Insights Tab | Complete | T-105-T-116 | Insight cards, scatter chart, top-content table, revenue driver bars |
 | 8 - Reports Tab | In Progress | T-117-T-130 | CSV export for all 3 datasets (T-117/T-122) |
-| 9 - Mobile and Responsive | In Progress | T-131-T-142 | T-131 nav + T-132 KPI stacking + T-133 chart/table overflow complete |
+| 9 - Mobile and Responsive | In Progress | T-131-T-142 | T-131 nav + T-132 KPI stacking + T-133 overflow + T-134 chart readability complete |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
 | 11 - Accessibility | Not Started | T-151-T-164 | Blocked by Phase 9 |
 | 12 - Testing | Not Started | T-165-T-180 | Blocked by Phase 11 |
@@ -81,9 +81,10 @@ Planning complete | Development in progress
 - Implemented mobile hamburger navigation with responsive desktop/mobile tab behavior and close-on-navigation interaction
 - Optimized mobile KPI stacking/spacing by shifting dense KPI strips to single-column base with balanced tablet/desktop breakpoints
 - Refined mobile chart/table spacing with safer chart min-heights, axis-label trimming, and explicit horizontal overflow for dense tables
+- Improved mobile chart readability with adaptive date labels, axis tick sizing/density, and legend sizing across trend/cohort/churn/scatter charts
 
 ## In Progress
-- Next: T-134 (mobile chart axis/legend readability pass)
+- Next: T-135 (mobile filter/pagination controls sizing pass)
 
 ## Risks and Notes
 - No blockers currently

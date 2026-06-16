@@ -16,6 +16,7 @@ import {
 import { EmptyState } from '@/components/EmptyState';
 import { ErrorState } from '@/components/ErrorState';
 import { LoadingState } from '@/components/LoadingState';
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { type ContentMetric } from '@/types/dashboard';
 
 interface ContentScatterProps {
@@ -40,6 +41,7 @@ export function ContentEngagementScatter({
   onRetry,
 }: ContentScatterProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsMounted(true);
@@ -67,7 +69,7 @@ export function ContentEngagementScatter({
       {/* Legend */}
       <div className="mb-2 flex flex-wrap gap-x-3 gap-y-1.5">
         {formats.map((fmt) => (
-          <span key={fmt} className="flex items-center gap-1.5 text-xs text-slate-400">
+          <span key={fmt} className="flex items-center gap-1.5 text-[11px] text-slate-400 sm:text-xs">
             <span
               className="inline-block h-2.5 w-2.5 rounded-full"
               style={{ backgroundColor: FORMAT_COLORS[fmt] ?? '#64748B' }}
@@ -86,18 +88,22 @@ export function ContentEngagementScatter({
               dataKey="views"
               name="Views"
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 10 }}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 9 : 10 }}
               tickFormatter={(v) =>
                 new Intl.NumberFormat('en-US', { notation: 'compact' }).format(v)
               }
+              tickCount={isMobile ? 4 : 6}
+              tickMargin={6}
             />
             <YAxis
               type="number"
               dataKey="engagementRate"
               name="Engagement"
               stroke="#64748B"
-              tick={{ fill: '#94A3B8', fontSize: 10 }}
+              tick={{ fill: '#94A3B8', fontSize: isMobile ? 9 : 10 }}
               tickFormatter={(v) => `${v}%`}
+              tickCount={isMobile ? 4 : 6}
+              width={isMobile ? 34 : 42}
             />
             <ZAxis type="number" dataKey="adRevenue" range={[30, 260]} name="Ad Revenue" />
             <Tooltip
