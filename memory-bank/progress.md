@@ -19,7 +19,7 @@ Planning complete | Development in progress
 | 9 - Mobile and Responsive | Complete | T-131-T-142 | Completed through T-142 final mobile responsive QA sweep |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
 | 11 - Accessibility | Complete | T-151-T-164 | Completed through T-164 (caching strategy + performance dashboard) |
-| 12 - Testing | In Progress | T-165-T-180 | T-165/T-166 complete; T-167 custom hook tests next |
+| 12 - Testing | In Progress | T-165-T-180 | T-165 through T-179 complete; T-180 coverage pass next |
 | 13 - Documentation | Not Started | T-181-T-190 | Can begin after core UI exists |
 | 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
 
@@ -106,9 +106,19 @@ Planning complete | Development in progress
 - Completed performance dashboard implementation in Reports tab to visualize recent web-vital and route-change metrics captured by the monitoring layer
 - Completed test foundation setup with Jest + React Testing Library (jsdom config, setup file, and passing component smoke tests)
 - Completed Zustand store tests covering tab, date range, filter, selected content, and refresh lifecycle actions
+- Completed custom data-hook tests for subscriber/content/revenue query hooks (T-167)
+- Completed KPI card unit tests for render, loading, and trend output (T-168)
+- Completed churn data-table tests for loading/empty and sorting behavior (T-169)
+- Completed chart state tests for loading/error/empty rendering across shared chart components (T-170)
+- Completed dashboard integration tests for overview/content/revenue routes (T-171/T-172/T-173)
+- Completed route-level error-state test coverage for overview/content/revenue dashboard views (T-175)
+- Completed mock data validation tests for date-range filtering and aggregate sanity checks (T-176)
+- Added reusable subscriber/content/revenue test fixture module (T-177)
+- Added GitHub Actions CI workflow to run tests, type-check, and build on push/PR (T-178)
+- Completed full run-in-band test suite validation after additions (T-179)
 
 ## In Progress
-- Next: T-167 (write custom hooks tests)
+- Next: T-180 (fix tests + increase coverage)
 
 ## Risks and Notes
 - No blockers currently

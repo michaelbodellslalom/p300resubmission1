@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 8+ Cross-cutting** — All 6 tabs now functional
+**Phase 12 Testing & Quality** — Launch-path testing tranche in progress
 
 ## Next Task
-**T-167: Write custom hooks tests**
+**T-180: Fix tests + increase coverage**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -79,13 +79,25 @@
 - T-164 complete: performance dashboard added to Reports tab to surface captured web-vital and route-change metrics in-session
 - T-165 complete: Jest + React Testing Library configured with working jsdom environment and initial passing component smoke tests
 - T-166 complete: Zustand dashboard store tests added for tab/date/filter/content selection and refresh lifecycle behaviors
+- T-167 complete: custom hook tests added for subscriber/content/revenue hooks
+- T-168 complete: KPI card unit tests added for render/loading/trend cases
+- T-169 complete: data table tests added for churn breakdown states and sorting interactions
+- T-170 complete: chart state tests added for loading/error/empty rendering paths
+- T-171 complete: Overview tab integration test added
+- T-172 complete: Content tab integration test added
+- T-173 complete: Revenue tab integration test added
+- T-175 complete: dashboard route-level error state tests added
+- T-176 complete: mock data validation tests added for range/filter/aggregate invariants
+- T-177 complete: reusable dashboard test fixtures added for subscriber/content/revenue datasets
+- T-178 complete: GitHub Actions CI workflow added for test/type-check/build verification
+- T-179 complete: full test suite run and validated (all green)
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-167 planning: custom hook test coverage for subscriber/content/revenue data hooks
+- T-180 execution: targeted test robustness and coverage growth pass
 
 ## Blockers
 None
@@ -101,4 +113,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-166 complete; next T-167 custom hook tests
+June 16, 2026 - T-179 complete and T-178 CI workflow added; next T-180 coverage pass
