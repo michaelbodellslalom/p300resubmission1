@@ -30,7 +30,7 @@ export default function RevenuePage() {
       </section>
 
       {isError && (
-        <ErrorState message="Failed to load revenue data." onRetry={() => void refetch()} />
+        <ErrorState message="Failed to load revenue data." variant="inline" onRetry={() => void refetch()} />
       )}
 
       {/* KPI strip */}

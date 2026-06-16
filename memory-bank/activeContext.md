@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-139: Mobile error/empty state spacing consistency pass**
+**T-140: Mobile state transition rhythm pass**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -59,13 +59,14 @@
 - T-136 complete: mobile sort header buttons upgraded to 44px touch targets in sortable tables
 - T-137 complete: mobile table metadata/header spacing improved across content/subscribers/revenue/insights/churn tables
 - T-138 complete: loading skeleton spacing standardized with dedicated KPI and panel variants for mobile consistency
+- T-139 complete: error and empty states standardized with panel/inline variants for mobile spacing consistency
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-139 planning: align mobile error/empty state spacing and visual rhythm
+- T-140 planning: polish mobile transition rhythm between loading/error/empty/content states
 
 ## Blockers
 None
@@ -78,4 +79,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-138 complete; next T-139 error/empty spacing consistency
+June 16, 2026 - T-139 complete; next T-140 state transition rhythm

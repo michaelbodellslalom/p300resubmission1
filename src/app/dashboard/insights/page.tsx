@@ -102,7 +102,7 @@ export default function InsightsPage() {
       </section>
 
       {isError && (
-        <ErrorState message="Failed to load one or more insight data sources." onRetry={handleRetry} />
+        <ErrorState message="Failed to load one or more insight data sources." variant="inline" onRetry={handleRetry} />
       )}
 
       {/* Key insight cards */}

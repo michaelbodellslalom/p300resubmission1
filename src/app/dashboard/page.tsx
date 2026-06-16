@@ -50,6 +50,7 @@ export default function OverviewPage() {
       {hasError && (
         <ErrorState
           message="Unable to load one or more KPI data sources."
+          variant="inline"
           onRetry={handleRetry}
         />
       )}

@@ -92,7 +92,7 @@ export default function ContentPage() {
       </section>
 
       {isError && (
-        <ErrorState message="Failed to load content data." onRetry={() => void refetch()} />
+        <ErrorState message="Failed to load content data." variant="inline" onRetry={() => void refetch()} />
       )}
 
       {/* Format filter */}

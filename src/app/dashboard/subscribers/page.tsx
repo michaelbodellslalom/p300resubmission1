@@ -37,6 +37,7 @@ export default function SubscribersPage() {
       {isError && (
         <ErrorState
           message="Failed to load subscriber data."
+          variant="inline"
           onRetry={() => void refetch()}
         />
       )}
