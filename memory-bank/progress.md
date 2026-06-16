@@ -19,8 +19,8 @@ Planning complete | Development in progress
 | 9 - Mobile and Responsive | Complete | T-131-T-142 | Completed through T-142 final mobile responsive QA sweep |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
 | 11 - Accessibility | Complete | T-151-T-164 | Completed through T-164 (caching strategy + performance dashboard) |
-| 12 - Testing | In Progress | T-165-T-180 | T-165 through T-179 complete; T-180 coverage pass next |
-| 13 - Documentation | Not Started | T-181-T-190 | Can begin after core UI exists |
+| 12 - Testing | Complete | T-165-T-180 | Completed through T-180 with expanded integration/export coverage |
+| 13 - Documentation | In Progress | T-181-T-190 | T-181 README refresh is next |
 | 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
 
 ## Completed Work
@@ -116,9 +116,11 @@ Planning complete | Development in progress
 - Added reusable subscriber/content/revenue test fixture module (T-177)
 - Added GitHub Actions CI workflow to run tests, type-check, and build on push/PR (T-178)
 - Completed full run-in-band test suite validation after additions (T-179)
+- Completed T-180 coverage pass with new Recommendations page tests (logic + loading/error/fallback) and Reports page tests (loading + CSV export path)
+- Re-validated full quality gates after coverage updates: Jest 13/13 suites passing, type-check passing, production build passing
 
 ## In Progress
-- Next: T-180 (fix tests + increase coverage)
+- Next: T-181 (write comprehensive README.md)
 
 ## Risks and Notes
 - No blockers currently

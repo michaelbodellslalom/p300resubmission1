@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 12 Testing & Quality** — Launch-path testing tranche in progress
+**Phase 13 Documentation & Final Polish** — Launch-path documentation tranche started
 
 ## Next Task
-**T-180: Fix tests + increase coverage**
+**T-181: Write comprehensive README.md**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -91,13 +91,14 @@
 - T-177 complete: reusable dashboard test fixtures added for subscriber/content/revenue datasets
 - T-178 complete: GitHub Actions CI workflow added for test/type-check/build verification
 - T-179 complete: full test suite run and validated (all green)
+- T-180 complete: test robustness/coverage pass expanded to recommendations and reports export flows with full validation rerun
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-180 execution: targeted test robustness and coverage growth pass
+- T-181 planning: README content refresh for launch-path documentation requirements
 
 ## Blockers
 None
@@ -113,4 +114,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-179 complete and T-178 CI workflow added; next T-180 coverage pass
+June 16, 2026 - T-180 complete; next T-181 comprehensive README refresh
