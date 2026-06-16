@@ -10,7 +10,7 @@ Planning complete | Development in progress
 | 0 - Scaffolding | In Progress | T-001-T-014 | T-012 now complete |
 | 1 - Header & Nav | Complete | T-015-T-022 | Dashboard shell, tabs, and date controls are live |
 | 2 - Overview KPIs | Complete | T-023-T-034 | KPI component, wiring, loading/error, responsive and style polish complete |
-| 3 - Overview Charts | In Progress | T-035-T-050 | Responsive layout + standardized no-data states shipped (through T-046) |
+| 3 - Overview Charts | In Progress | T-035-T-050 | Responsive layout, no-data states, and chart style polish shipped (through T-047) |
 | 4 - Subscribers Tab | Not Started | T-051-T-068 | Blocked by Phase 1 |
 | 5 - Content Tab | Not Started | T-069-T-088 | Blocked by Phase 1 |
 | 6 - Revenue Tab | Not Started | T-089-T-104 | Blocked by Phase 1 |
@@ -65,12 +65,15 @@ Planning complete | Development in progress
 - Added shared EmptyState component for consistent no-data messaging
 - Standardized no-data copy and presentation in subscriber chart, revenue chart, and churn table
 - Verified no-data rendering by testing an out-of-range custom date window
+- Polished subscriber and revenue chart surfaces with richer gradient treatment
+- Refined chart tooltip/legend styling and series emphasis for visual hierarchy
+- Added subscriber area fill and upgraded grid contrast/tick behavior for readability
 - Fixed refresh timestamp click interception with pointer-events-safe label styling
 - Fixed header hydration mismatch for dynamic "Updated" timestamp text
 - Re-validated type-check and production build after chart integration
 
 ## In Progress
-- Next: T-047 (chart design-color polish pass)
+- Next: T-048 (chart responsiveness QA on mobile breakpoints)
 
 ## Risks and Notes
 - No blockers currently

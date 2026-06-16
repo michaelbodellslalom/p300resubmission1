@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 
 import {
+  Area,
+  CartesianGrid,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -74,15 +76,22 @@ export function SubscriberTrendChart({
   }
 
   return (
-    <div className="card h-64 border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40 sm:h-72">
+    <div className="card h-64 border border-cyan-500/25 bg-gradient-to-b from-cyan-500/8 via-slate-800/70 to-slate-900/40 sm:h-72">
       <div className="mb-4">
-        <p className="text-xs uppercase tracking-wide text-slate-400">Subscriber Trend</p>
+        <p className="text-xs uppercase tracking-wide text-cyan-200/80">Subscriber Trend</p>
         <p className="text-sm text-slate-300">Total subscribers over the selected time range</p>
       </div>
 
       <div className="h-[78%] w-full min-h-44 min-w-0 sm:h-[82%] sm:min-h-52">
         <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={208}>
         <LineChart data={data} margin={{ top: 8, right: 8, bottom: 8, left: -12 }}>
+          <defs>
+            <linearGradient id="subscriberTrendFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#22D3EE" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#22D3EE" stopOpacity={0.02} />
+            </linearGradient>
+          </defs>
+          <CartesianGrid stroke="#1E293B" strokeDasharray="3 6" vertical={false} />
           <XAxis
             dataKey="date"
             tickFormatter={formatDateLabel}
@@ -97,9 +106,10 @@ export function SubscriberTrendChart({
             tickFormatter={formatCompactNumber}
           />
           <Tooltip
+            cursor={{ stroke: '#155E75', strokeDasharray: '4 4' }}
             contentStyle={{
-              backgroundColor: '#0F172A',
-              border: '1px solid #334155',
+              backgroundColor: '#020617',
+              border: '1px solid #164E63',
               borderRadius: '8px',
               color: '#E2E8F0',
             }}
@@ -113,13 +123,19 @@ export function SubscriberTrendChart({
               ];
             }}
           />
+          <Area
+            type="monotone"
+            dataKey="totalSubscribers"
+            stroke="none"
+            fill="url(#subscriberTrendFill)"
+          />
           <Line
             type="monotone"
             dataKey="totalSubscribers"
             stroke="#22D3EE"
-            strokeWidth={2.5}
+            strokeWidth={2.8}
             dot={false}
-            activeDot={{ r: 4, fill: '#22D3EE', stroke: '#0F172A', strokeWidth: 2 }}
+            activeDot={{ r: 4, fill: '#67E8F9', stroke: '#083344', strokeWidth: 2 }}
           />
         </LineChart>
         </ResponsiveContainer>
