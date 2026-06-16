@@ -4,7 +4,7 @@
 **Phase 3: Overview Charts** 🚧 IN PROGRESS
 
 ## Next Task
-**T-048: Validate chart responsiveness and readability across mobile breakpoints**
+**T-049: Implement real-time chart updates behavior validation with polling**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -50,13 +50,14 @@
 - T-045 complete: responsive refinement for chart and table sections across mobile and desktop
 - T-046 complete: no-data states validated and standardized for Overview charts and churn table
 - T-047 complete: chart surface, legend, tooltip, and series color polish applied
+- T-048 complete: chart responsiveness and readability validated at 320px, 375px, and 768px
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-048 planning: chart responsiveness QA pass on mobile widths and date-range states
+- T-049 planning: verify chart reactivity under periodic polling and manual refresh
 
 ## Blockers
 None
@@ -69,4 +70,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-047 complete, chart visual styling polished
+June 16, 2026 - T-048 complete, mobile responsiveness QA validated
