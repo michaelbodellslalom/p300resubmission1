@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 4: Subscribers Tab** 🚧 IN PROGRESS
+**Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-054 through T-097 completed — begin Insights tab (T-105)**
+**T-131: Mobile nav hamburger menu for smaller screens**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -70,4 +70,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-054/T-069/T-089 batches complete; Subscribers, Content, Revenue tabs shipped
+June 16, 2026 - All six tabs complete; Insights scatter+insight-cards+revenue-bars; Reports CSV exports

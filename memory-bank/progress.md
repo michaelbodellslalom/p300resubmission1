@@ -14,9 +14,9 @@ Planning complete | Development in progress
 | 4 - Subscribers Tab | In Progress | T-051-T-068 | KPI strip, cohort chart, cohort table, ChurnReasonChart, churn table (T-051-T-054) |
 | 5 - Content Tab | In Progress | T-069-T-088 | Format filter, KPIs, sortable+paginated table shipped (T-069-T-074) |
 | 6 - Revenue Tab | In Progress | T-089-T-104 | KPIs, RevenueTrendChart, format revenue table shipped (T-089-T-097) |
-| 7 - Insights Tab | Not Started | T-105-T-116 | Starting next |
-| 8 - Reports Tab | Not Started | T-117-T-130 | Blocked by Phase 1 |
-| 9 - Mobile and Responsive | Not Started | T-131-T-142 | Blocked by Phase 8 |
+| 7 - Insights Tab | Complete | T-105-T-116 | Insight cards, scatter chart, top-content table, revenue driver bars |
+| 8 - Reports Tab | In Progress | T-117-T-130 | CSV export for all 3 datasets (T-117/T-122) |
+| 9 - Mobile and Responsive | Not Started | T-131-T-142 | Next priority |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
 | 11 - Accessibility | Not Started | T-151-T-164 | Blocked by Phase 9 |
 | 12 - Testing | Not Started | T-165-T-180 | Blocked by Phase 11 |
@@ -80,7 +80,7 @@ Planning complete | Development in progress
 - Re-validated type-check and production build after chart integration
 
 ## In Progress
-- Next: T-105 (Insights tab layout and correlation charts)
+- Next: T-131 (mobile navigation hamburger menu)
 
 ## Risks and Notes
 - No blockers currently
