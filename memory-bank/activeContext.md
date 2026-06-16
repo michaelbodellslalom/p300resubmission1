@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-166: Write Zustand store tests**
+**T-167: Write custom hooks tests**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -78,13 +78,14 @@
 - T-163 complete: caching strategy implemented with shared API cache-control policy and aligned React Query stale/refetch/gc timings
 - T-164 complete: performance dashboard added to Reports tab to surface captured web-vital and route-change metrics in-session
 - T-165 complete: Jest + React Testing Library configured with working jsdom environment and initial passing component smoke tests
+- T-166 complete: Zustand dashboard store tests added for tab/date/filter/content selection and refresh lifecycle behaviors
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-166 planning: Zustand store behavior tests for tab/filter/date/refresh actions
+- T-167 planning: custom hook test coverage for subscriber/content/revenue data hooks
 
 ## Blockers
 None
@@ -100,4 +101,4 @@ None
 - Primary 3G bottlenecks observed: unused JS (~189 KiB), bootup time (~1.2s), main-thread work (~1.9s)
 
 ## Last Updated
-June 16, 2026 - T-165 complete; next T-166 store tests
+June 16, 2026 - T-166 complete; next T-167 custom hook tests
