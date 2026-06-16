@@ -154,14 +154,14 @@ export default function ContentPage() {
           />
         ) : (
           <div className="card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40">
-            <div className="mb-3 flex items-end justify-between gap-3">
+            <div className="mb-3.5 flex flex-col gap-1.5 sm:mb-3 sm:flex-row sm:items-end sm:justify-between sm:gap-3">
               <div>
                 <p className="text-xs uppercase tracking-wide text-slate-400">Content Performance</p>
                 <p className="text-sm text-slate-300">
                   {isLoading ? 'Loading…' : `${sortedItems.length} items — page ${page + 1} of ${totalPages || 1}`}
                 </p>
               </div>
-              <p className="text-xs text-slate-500">Click headers to sort</p>
+              <p className="text-[11px] text-slate-500 sm:text-xs">Click headers to sort</p>
             </div>
 
             <div className="overflow-x-auto rounded-md border border-slate-800/80">

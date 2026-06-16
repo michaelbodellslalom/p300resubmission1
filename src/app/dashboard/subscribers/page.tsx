@@ -81,9 +81,9 @@ export default function SubscribersPage() {
       {/* Cohort table */}
       <section className="overflow-hidden">
         <div className="card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40">
-          <div className="mb-3">
+          <div className="mb-3.5 space-y-1 sm:mb-3">
             <p className="text-xs uppercase tracking-wide text-slate-400">Cohort Summary</p>
-            <p className="text-sm text-slate-300">Monthly cohort sizes and estimated LTV</p>
+            <p className="text-sm text-slate-300 sm:text-sm">Monthly cohort sizes and estimated LTV</p>
           </div>
           <div className="overflow-x-auto rounded-md border border-slate-800/80">
             <table className="min-w-[42rem] text-left text-xs sm:min-w-full sm:text-sm">

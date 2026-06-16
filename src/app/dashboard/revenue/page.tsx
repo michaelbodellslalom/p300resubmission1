@@ -79,9 +79,9 @@ export default function RevenuePage() {
       {/* Revenue by format table */}
       <section className="overflow-hidden">
         <div className="card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40">
-          <div className="mb-3">
+          <div className="mb-3.5 space-y-1 sm:mb-3">
             <p className="text-xs uppercase tracking-wide text-slate-400">Revenue by Format</p>
-            <p className="text-sm text-slate-300">Content count, total revenue, and average RPM per format</p>
+            <p className="text-sm text-slate-300 sm:text-sm">Content count, total revenue, and average RPM per format</p>
           </div>
           <div className="overflow-x-auto rounded-md border border-slate-800/80">
             <table className="min-w-[36rem] text-left text-xs sm:min-w-full sm:text-sm">

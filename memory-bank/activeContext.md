@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-137: Mobile table metadata/header spacing pass**
+**T-138: Mobile loading-state spacing consistency pass**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -57,13 +57,14 @@
 - T-134 complete: mobile chart axis and legend readability refined across overview/subscribers/insights charts
 - T-135 complete: mobile filter and pagination controls resized for 44px tap comfort
 - T-136 complete: mobile sort header buttons upgraded to 44px touch targets in sortable tables
+- T-137 complete: mobile table metadata/header spacing improved across content/subscribers/revenue/insights/churn tables
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-137 planning: improve mobile table header/meta spacing and readability
+- T-138 planning: align mobile loading-state spacing across cards/tables/charts
 
 ## Blockers
 None
@@ -76,4 +77,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-136 complete; next T-137 table header/meta spacing
+June 16, 2026 - T-137 complete; next T-138 loading-state spacing consistency

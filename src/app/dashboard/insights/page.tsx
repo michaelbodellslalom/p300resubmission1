@@ -161,9 +161,9 @@ export default function InsightsPage() {
       {/* Top content by attributed subscribers */}
       <section className="overflow-hidden">
         <div className="card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40">
-          <div className="mb-3">
+          <div className="mb-3.5 space-y-1 sm:mb-3">
             <p className="text-xs uppercase tracking-wide text-slate-400">Top Content by Subscriber Impact</p>
-            <p className="text-sm text-slate-300">Content pieces driving the most new subscriber acquisitions</p>
+            <p className="text-sm text-slate-300 sm:text-sm">Content pieces driving the most new subscriber acquisitions</p>
           </div>
           <div className="overflow-x-auto rounded-md border border-slate-800/80">
             <table className="min-w-[42rem] text-left text-xs sm:min-w-full sm:text-sm">
