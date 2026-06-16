@@ -1,10 +1,10 @@
 # Active Context: Current Work State
 
 ## Current Phase
-**Phase 3: Overview Charts** 🚧 IN PROGRESS
+**Phase 4: Subscribers Tab** 🚧 IN PROGRESS
 
 ## Next Task
-**T-049: Implement real-time chart updates behavior validation with polling**
+**T-054: Add Churn Reason Breakdown chart to Subscribers tab (bar variant)**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -70,4 +70,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-048 complete, mobile responsiveness QA validated
+June 16, 2026 - T-049/T-050/T-051/T-052/T-053 complete, Phase 3 closed, Subscribers tab launched

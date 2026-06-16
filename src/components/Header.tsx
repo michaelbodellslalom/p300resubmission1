@@ -33,9 +33,13 @@ export function Header() {
   }, []);
 
   const handleRefresh = async () => {
+    if (isRefreshing) return;
     markRefreshing(true);
-    await queryClient.invalidateQueries();
-    markUpdated();
+    try {
+      await queryClient.invalidateQueries();
+    } finally {
+      markUpdated();
+    }
   };
 
   return (
