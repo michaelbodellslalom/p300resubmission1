@@ -11,10 +11,10 @@ Planning complete | Development in progress
 | 1 - Header & Nav | Complete | T-015-T-022 | Dashboard shell, tabs, and date controls are live |
 | 2 - Overview KPIs | Complete | T-023-T-034 | KPI component, wiring, loading/error, responsive and style polish complete |
 | 3 - Overview Charts | Complete | T-035-T-050 | All Overview chart tasks complete through T-050 |
-| 4 - Subscribers Tab | In Progress | T-051-T-068 | KPI strip, cohort chart, cohort table, churn breakdown shipped (T-051-T-053) |
-| 5 - Content Tab | Not Started | T-069-T-088 | Blocked by Phase 1 |
-| 6 - Revenue Tab | Not Started | T-089-T-104 | Blocked by Phase 1 |
-| 7 - Insights Tab | Not Started | T-105-T-116 | Blocked by Phase 5 and 6 |
+| 4 - Subscribers Tab | In Progress | T-051-T-068 | KPI strip, cohort chart, cohort table, ChurnReasonChart, churn table (T-051-T-054) |
+| 5 - Content Tab | In Progress | T-069-T-088 | Format filter, KPIs, sortable+paginated table shipped (T-069-T-074) |
+| 6 - Revenue Tab | In Progress | T-089-T-104 | KPIs, RevenueTrendChart, format revenue table shipped (T-089-T-097) |
+| 7 - Insights Tab | Not Started | T-105-T-116 | Starting next |
 | 8 - Reports Tab | Not Started | T-117-T-130 | Blocked by Phase 1 |
 | 9 - Mobile and Responsive | Not Started | T-131-T-142 | Blocked by Phase 8 |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
@@ -72,12 +72,15 @@ Planning complete | Development in progress
 - Verified date-range preset behavior remains stable on mobile during chart/table rendering
 - Fixed Header refresh with try/finally guard; validated Refresh button cycle in browser
 - Launched Subscribers tab with KPI strip, CohortRetentionChart, cohort table, and ChurnBreakdownTable
+- Added ChurnReasonChart horizontal bar chart to Subscribers tab
+- Built Content tab: format filter, aggregate KPIs, sortable+paginated performance table
+- Built Revenue tab: KPI strip, RevenueTrendChart reuse, revenue-by-format table
 - Fixed refresh timestamp click interception with pointer-events-safe label styling
 - Fixed header hydration mismatch for dynamic "Updated" timestamp text
 - Re-validated type-check and production build after chart integration
 
 ## In Progress
-- Next: T-054 (churn reason breakdown chart for Subscribers tab)
+- Next: T-105 (Insights tab layout and correlation charts)
 
 ## Risks and Notes
 - No blockers currently

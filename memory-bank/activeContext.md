@@ -4,7 +4,7 @@
 **Phase 4: Subscribers Tab** 🚧 IN PROGRESS
 
 ## Next Task
-**T-054: Add Churn Reason Breakdown chart to Subscribers tab (bar variant)**
+**T-054 through T-097 completed — begin Insights tab (T-105)**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -70,4 +70,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-049/T-050/T-051/T-052/T-053 complete, Phase 3 closed, Subscribers tab launched
+June 16, 2026 - T-054/T-069/T-089 batches complete; Subscribers, Content, Revenue tabs shipped
