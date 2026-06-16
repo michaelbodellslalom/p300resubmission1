@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { filterByDateRange, getRevenueByFormat, revenueTimeline } from '@/data/mock';
+import { filterByDateRange, getContentItems, getRevenueByFormat, revenueTimeline } from '@/data/mock';
 
 function getDateRange(searchParams: URLSearchParams): { start: string; end: string } {
   const end = searchParams.get('end') ?? new Date().toISOString().split('T')[0] ?? '';
@@ -17,9 +17,10 @@ export async function GET(request: NextRequest) {
   const dateRange = getDateRange(request.nextUrl.searchParams);
 
   const timeline = filterByDateRange(revenueTimeline, dateRange);
+  const scopedContent = getContentItems(dateRange);
 
   return NextResponse.json({
     timeline,
-    byFormat: getRevenueByFormat(),
+    byFormat: getRevenueByFormat(scopedContent),
   });
 }

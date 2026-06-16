@@ -2,7 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-import { contentMetrics, filterByDateRange } from '@/data/mock';
+import { contentMetrics, getContentItems } from '@/data/mock';
 import { useDashboardStore } from '@/store/dashboardStore';
 
 const SIMULATED_LATENCY_MS = 120;
@@ -31,17 +31,10 @@ export function useFetchContentData() {
       filters.contentType,
     ],
     queryFn: async () => {
-      const byDate = filterByDateRange(
-        contentMetrics.map((item) => ({ ...item, date: item.publishDate })),
-        dateRange,
-      );
-
-      const filtered = byDate
-        .filter((item) =>
-          filters.contentFormat === 'all' ? true : item.format === filters.contentFormat,
-        )
-        .filter((item) => (filters.contentType === 'all' ? true : item.type === filters.contentType))
-        .map(({ date: _date, ...rest }) => rest);
+      const filtered = getContentItems(dateRange, {
+        format: filters.contentFormat,
+        type: filters.contentType,
+      });
 
       return delay({
         items: filtered,

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { contentMetrics, filterByDateRange, getContentPerformanceByFormat } from '@/data/mock';
+import { getContentItems, getContentPerformanceByFormat } from '@/data/mock';
 
 function getDateRange(searchParams: URLSearchParams): { start: string; end: string } {
   const end = searchParams.get('end') ?? new Date().toISOString().split('T')[0] ?? '';
@@ -20,19 +20,11 @@ export async function GET(request: NextRequest) {
   const contentFormat = searchParams.get('format') ?? 'all';
   const contentType = searchParams.get('type') ?? 'all';
 
-  const datedContent = filterByDateRange(
-    contentMetrics.map((item) => ({ ...item, date: item.publishDate })),
-    dateRange,
-  );
-
-  const filtered = datedContent
-    .filter((item) => (contentFormat === 'all' ? true : item.format === contentFormat))
-    .filter((item) => (contentType === 'all' ? true : item.type === contentType))
-    .map(({ date: _date, ...item }) => item);
+  const filtered = getContentItems(dateRange, { format: contentFormat, type: contentType });
 
   return NextResponse.json({
     items: filtered,
     totalItems: filtered.length,
-    byFormat: getContentPerformanceByFormat(),
+    byFormat: getContentPerformanceByFormat(filtered),
   });
 }

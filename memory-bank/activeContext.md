@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-161: Optimize database queries**
+**T-162: Test load time on 3G**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -73,13 +73,14 @@
 - T-158 complete: route-level code splitting expanded with dynamic chart imports on overview, subscribers, revenue, and insights routes
 - T-159 complete: dynamic import applied to CSV export library so Papa Parse loads only when export actions are invoked
 - T-160 complete: client-side performance monitoring added for web vitals and route-change timing with in-browser metric queueing
+- T-161 complete: mock data query-path optimization pass reduced redundant array remaps/date parsing and scoped format aggregations to active date ranges
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-161 planning: query-path review and optimization strategy (mock data layer currently in use)
+- T-162 planning: constrained-network load testing and bottleneck capture (3G profile)
 
 ## Blockers
 None
@@ -93,4 +94,4 @@ None
 - Runtime performance metrics are available at window.__dashboardPerfMetrics during active sessions
 
 ## Last Updated
-June 16, 2026 - T-160 complete; next T-161 query optimization review
+June 16, 2026 - T-161 complete; next T-162 3G load testing

@@ -12,6 +12,7 @@ import {
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const START_SUBSCRIBERS = 140000;
+const dateEpochCache = new Map<string, number>();
 
 const formats: ContentFormat[] = ['video', 'article', 'podcast', 'short-form', 'long-form'];
 const types: ContentType[] = [
@@ -43,6 +44,17 @@ function rangeDays(backDays: number): Date[] {
     const dayOffset = backDays - idx - 1;
     return new Date(today.getTime() - dayOffset * DAY_MS);
   });
+}
+
+function toEpoch(dateString: string): number {
+  const cached = dateEpochCache.get(dateString);
+  if (cached !== undefined) {
+    return cached;
+  }
+
+  const epoch = Date.parse(dateString);
+  dateEpochCache.set(dateString, epoch);
+  return epoch;
 }
 
 function generateSubscriberTimeline(backDays = 180): SubscriberSnapshot[] {
@@ -196,19 +208,34 @@ export const subscriberTimeline = generateSubscriberTimeline(180);
 export const contentMetrics = generateContentMetrics(72);
 export const revenueTimeline = generateRevenueTimeline(subscriberTimeline, contentMetrics);
 export const subscriberCohorts = generateCohorts(12);
-export const churnReasons = getChurnReasonsForRange();
 
 export function filterByDateRange<T extends { date: string }>(
   items: T[],
   dateRange: DateRange,
 ): T[] {
-  const start = new Date(dateRange.start);
-  const end = new Date(dateRange.end);
+  const start = toEpoch(dateRange.start);
+  const end = toEpoch(dateRange.end);
 
   return items.filter((item) => {
-    const date = new Date(item.date);
+    const date = toEpoch(item.date);
     return date >= start && date <= end;
   });
+}
+
+export function getContentItems(range?: DateRange, filters?: { format?: string; type?: string }): ContentMetric[] {
+  const scoped = range
+    ? contentMetrics.filter((item) => {
+        const publishEpoch = toEpoch(item.publishDate);
+        return publishEpoch >= toEpoch(range.start) && publishEpoch <= toEpoch(range.end);
+      })
+    : contentMetrics;
+
+  const format = filters?.format ?? 'all';
+  const type = filters?.type ?? 'all';
+
+  return scoped
+    .filter((item) => (format === 'all' ? true : item.format === format))
+    .filter((item) => (type === 'all' ? true : item.type === type));
 }
 
 export function getChurnReasonsForRange(range?: DateRange): ChurnReason[] {
@@ -293,44 +320,44 @@ export function getTopContentBy(metric: keyof Pick<ContentMetric, 'views' | 'eng
     .slice(0, count);
 }
 
-export function getRevenueByFormat(): Array<{
+export function getRevenueByFormat(items: ContentMetric[] = contentMetrics): Array<{
   format: ContentFormat;
   contentCount: number;
   totalRevenue: number;
   averageRpm: number;
 }> {
   return formats.map((format) => {
-    const items = contentMetrics.filter((item) => item.format === format);
-    const totalRevenue = items.reduce((sum, item) => sum + item.adRevenue, 0);
-    const averageRpm = items.reduce((sum, item) => sum + item.rpm, 0) / Math.max(items.length, 1);
+    const formatItems = items.filter((item) => item.format === format);
+    const totalRevenue = formatItems.reduce((sum, item) => sum + item.adRevenue, 0);
+    const averageRpm = formatItems.reduce((sum, item) => sum + item.rpm, 0) / Math.max(formatItems.length, 1);
 
     return {
       format,
-      contentCount: items.length,
+      contentCount: formatItems.length,
       totalRevenue: round(totalRevenue, 2),
       averageRpm: round(averageRpm, 2),
     };
   });
 }
 
-export function getContentPerformanceByFormat(): Array<{
+export function getContentPerformanceByFormat(items: ContentMetric[] = contentMetrics): Array<{
   format: ContentFormat;
   averageViews: number;
   averageEngagementRate: number;
   averageAttributedSubscribers: number;
 }> {
   return formats.map((format) => {
-    const items = contentMetrics.filter((item) => item.format === format);
+    const formatItems = items.filter((item) => item.format === format);
 
     return {
       format,
-      averageViews: Math.round(items.reduce((sum, item) => sum + item.views, 0) / Math.max(items.length, 1)),
+      averageViews: Math.round(formatItems.reduce((sum, item) => sum + item.views, 0) / Math.max(formatItems.length, 1)),
       averageEngagementRate: round(
-        items.reduce((sum, item) => sum + item.engagementRate, 0) / Math.max(items.length, 1),
+        formatItems.reduce((sum, item) => sum + item.engagementRate, 0) / Math.max(formatItems.length, 1),
         2,
       ),
       averageAttributedSubscribers: Math.round(
-        items.reduce((sum, item) => sum + item.attributedNewSubscribers, 0) / Math.max(items.length, 1),
+        formatItems.reduce((sum, item) => sum + item.attributedNewSubscribers, 0) / Math.max(formatItems.length, 1),
       ),
     };
   });

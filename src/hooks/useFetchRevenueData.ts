@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import {
   filterByDateRange,
+  getContentItems,
   getRevenueByFormat,
   revenueTimeline,
 } from '@/data/mock';
@@ -29,7 +30,7 @@ export function useFetchRevenueData() {
     queryKey: ['revenue', dateRange.start, dateRange.end],
     queryFn: async () => {
       const timeline = filterByDateRange(revenueTimeline, dateRange);
-      const byFormat = getRevenueByFormat();
+      const byFormat = getRevenueByFormat(getContentItems(dateRange));
 
       return delay({
         timeline,

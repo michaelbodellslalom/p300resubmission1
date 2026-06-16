@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 import {
-  churnReasons,
   filterByDateRange,
+  getChurnReasonsForRange,
   getOverviewKPIs,
   subscriberCohorts,
   subscriberTimeline,
@@ -28,7 +28,7 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({
     timeline,
     cohorts: subscriberCohorts,
-    churnReasons,
+    churnReasons: getChurnReasonsForRange(dateRange),
     overview,
   });
 }

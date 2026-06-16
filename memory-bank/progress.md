@@ -18,7 +18,7 @@ Planning complete | Development in progress
 | 8 - Reports Tab | In Progress | T-117-T-130 | CSV export for all 3 datasets (T-117/T-122) |
 | 9 - Mobile and Responsive | Complete | T-131-T-142 | Completed through T-142 final mobile responsive QA sweep |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
-| 11 - Accessibility | In Progress | T-151-T-164 | T-151 through T-160 complete; T-161 query optimization review next |
+| 11 - Accessibility | In Progress | T-151-T-164 | T-151 through T-161 complete; T-162 3G load testing next |
 | 12 - Testing | Not Started | T-165-T-180 | Blocked by Phase 11 |
 | 13 - Documentation | Not Started | T-181-T-190 | Can begin after core UI exists |
 | 14 - Deployment | Not Started | T-191-T-198 | Blocked by Phase 13 |
@@ -100,9 +100,10 @@ Planning complete | Development in progress
 - Completed code splitting pass by lazy-loading chart-heavy components on subscribers, revenue, and insights routes with loading-state fallbacks and production validation
 - Completed dynamic-import pass for heavy export library by loading Papa Parse only when CSV export actions are triggered on the Reports tab
 - Completed performance monitoring setup by mounting a global client monitor that captures web vitals plus route-change timings into a rolling in-browser metric queue
+- Completed query optimization review for mock data layer by removing redundant content remaps, adding cached date parsing for range filters, and scoping by-format aggregations to filtered datasets
 
 ## In Progress
-- Next: T-161 (optimize database queries)
+- Next: T-162 (test load time on 3G)
 
 ## Risks and Notes
 - No blockers currently
