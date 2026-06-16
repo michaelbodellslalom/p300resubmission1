@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-136: Mobile table sort controls touch-target pass**
+**T-137: Mobile table metadata/header spacing pass**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -56,13 +56,14 @@
 - T-133 complete: mobile chart/table spacing and overflow refined across shared components and tab tables
 - T-134 complete: mobile chart axis and legend readability refined across overview/subscribers/insights charts
 - T-135 complete: mobile filter and pagination controls resized for 44px tap comfort
+- T-136 complete: mobile sort header buttons upgraded to 44px touch targets in sortable tables
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-136 planning: improve mobile table sort header controls and tap affordance
+- T-137 planning: improve mobile table header/meta spacing and readability
 
 ## Blockers
 None
@@ -75,4 +76,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-135 complete; next T-136 mobile table sort controls
+June 16, 2026 - T-136 complete; next T-137 table header/meta spacing

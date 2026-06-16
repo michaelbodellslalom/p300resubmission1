@@ -104,7 +104,7 @@ export function ChurnBreakdownTable({
                 <button
                   type="button"
                   onClick={() => handleSort('reason')}
-                  className="inline-flex items-center gap-1 hover:text-slate-200"
+                  className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                 >
                   Reason {directionGlyph('reason')}
                 </button>
@@ -113,7 +113,7 @@ export function ChurnBreakdownTable({
                 <button
                   type="button"
                   onClick={() => handleSort('percentage')}
-                  className="inline-flex items-center gap-1 hover:text-slate-200"
+                  className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                 >
                   Share {directionGlyph('percentage')}
                 </button>
@@ -122,7 +122,7 @@ export function ChurnBreakdownTable({
                 <button
                   type="button"
                   onClick={() => handleSort('affectedSubscribers')}
-                  className="inline-flex items-center gap-1 hover:text-slate-200"
+                  className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                 >
                   Affected Subs {directionGlyph('affectedSubscribers')}
                 </button>

@@ -16,7 +16,7 @@ Planning complete | Development in progress
 | 6 - Revenue Tab | In Progress | T-089-T-104 | KPIs, RevenueTrendChart, format revenue table shipped (T-089-T-097) |
 | 7 - Insights Tab | Complete | T-105-T-116 | Insight cards, scatter chart, top-content table, revenue driver bars |
 | 8 - Reports Tab | In Progress | T-117-T-130 | CSV export for all 3 datasets (T-117/T-122) |
-| 9 - Mobile and Responsive | In Progress | T-131-T-142 | T-131 nav + T-132 KPI stacking + T-133 overflow + T-134 chart readability + T-135 controls sizing complete |
+| 9 - Mobile and Responsive | In Progress | T-131-T-142 | T-131 nav + T-132 KPI stacking + T-133 overflow + T-134 chart readability + T-135 controls + T-136 sort targets complete |
 | 10 - Real-Time Updates | Not Started | T-143-T-150 | Blocked by Phase 1 |
 | 11 - Accessibility | Not Started | T-151-T-164 | Blocked by Phase 9 |
 | 12 - Testing | Not Started | T-165-T-180 | Blocked by Phase 11 |
@@ -83,9 +83,10 @@ Planning complete | Development in progress
 - Refined mobile chart/table spacing with safer chart min-heights, axis-label trimming, and explicit horizontal overflow for dense tables
 - Improved mobile chart readability with adaptive date labels, axis tick sizing/density, and legend sizing across trend/cohort/churn/scatter charts
 - Increased mobile filter, date preset/input, refresh/menu, and pagination control tap targets to 44px baseline sizing
+- Increased sortable table header controls to 44px touch targets for mobile in Content and Churn tables
 
 ## In Progress
-- Next: T-136 (mobile table sort controls touch-target pass)
+- Next: T-137 (mobile table metadata/header spacing pass)
 
 ## Risks and Notes
 - No blockers currently

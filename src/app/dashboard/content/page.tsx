@@ -175,7 +175,7 @@ export default function ContentPage() {
                         <button
                           type="button"
                           onClick={() => handleSort(key)}
-                          className="inline-flex items-center gap-1 hover:text-slate-200"
+                          className="inline-flex min-h-11 items-center gap-1 px-1.5 py-2 text-sm hover:text-slate-200 sm:min-h-0 sm:px-0 sm:py-0 sm:text-xs"
                         >
                           {SORT_LABELS[key]} {dirGlyph(key)}
                         </button>
