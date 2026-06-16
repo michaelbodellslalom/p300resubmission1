@@ -49,10 +49,10 @@ export function KPICard({
   }
 
   return (
-    <article className="card min-h-32">
+    <article className="card flex h-full min-h-36 flex-col justify-between">
       <p className="text-xs uppercase tracking-wide text-slate-400">{label}</p>
 
-      <p className={`mt-2 text-3xl font-bold ${toneClass(tone)}`}>{value}</p>
+      <p className={`mt-2 text-2xl font-bold md:text-3xl ${toneClass(tone)}`}>{value}</p>
 
       {typeof trendValue === 'number' && (
         <p className={`mt-2 text-xs font-semibold ${trendClass(trendValue)}`}>

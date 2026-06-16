@@ -4,7 +4,7 @@
 **Phase 2: Overview KPIs** 🚧 IN PROGRESS
 
 ## Next Task
-**T-031: Validate and polish responsive KPI card grid behavior**
+**T-032: KPI visual style refinement and hover polish**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -35,12 +35,13 @@
 - T-028 complete: revenue KPI cards wired to revenue hook data
 - T-029 complete: KPI loading state upgraded to reusable skeleton component
 - T-030 complete: KPI error state added with retry action
+- T-031 complete: responsive KPI grid/card layout validated and polished
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
  - Production build and type-check verified after KPI refactor
 
 ## What's In Progress
-- Preparing responsive KPI layout validation and polish
+- Preparing KPI visual style refinement pass
 
 ## Blockers
 None
@@ -52,4 +53,4 @@ None
 - Real-time polling remains planned for later phase
 
 ## Last Updated
-June 16, 2026 - T-029/T-030 complete, ready for T-031
+June 16, 2026 - T-031 complete, ready for T-032
