@@ -12,11 +12,12 @@ export function LoadingState({ label = 'Loading data', variant = 'panel' }: Load
     <div
       aria-live="polite"
       aria-label={label}
-      className={`card animate-pulse border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/50 ${
+      className={`state-enter card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/50 ${
         isKpi ? 'min-h-32 sm:min-h-36' : 'min-h-[18rem] sm:min-h-[20rem]'
       }`}
       data-testid="loading-skeleton"
     >
+      <div className="animate-pulse">
       <div className="h-3 w-28 rounded bg-slate-700" />
       {isKpi ? (
         <>
@@ -31,6 +32,7 @@ export function LoadingState({ label = 'Loading data', variant = 'panel' }: Load
           <div className="mt-3 h-3 w-32 rounded bg-slate-700" />
         </>
       )}
+      </div>
     </div>
   );
 }

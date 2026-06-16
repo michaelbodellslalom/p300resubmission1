@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-140: Mobile state transition rhythm pass**
+**T-141: Mobile reduced-motion QA and polish pass**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -60,13 +60,14 @@
 - T-137 complete: mobile table metadata/header spacing improved across content/subscribers/revenue/insights/churn tables
 - T-138 complete: loading skeleton spacing standardized with dedicated KPI and panel variants for mobile consistency
 - T-139 complete: error and empty states standardized with panel/inline variants for mobile spacing consistency
+- T-140 complete: state transition rhythm improved with shared entry animation and reduced-motion fallback
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-140 planning: polish mobile transition rhythm between loading/error/empty/content states
+- T-141 planning: verify reduced-motion behavior and micro-transition polish on mobile states
 
 ## Blockers
 None
@@ -79,4 +80,4 @@ None
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
 
 ## Last Updated
-June 16, 2026 - T-139 complete; next T-140 state transition rhythm
+June 16, 2026 - T-140 complete; next T-141 reduced-motion QA/polish

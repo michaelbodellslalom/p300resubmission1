@@ -63,7 +63,7 @@ export function KPICard({
 
   return (
     <article
-      className={`card flex h-full min-h-32 flex-col justify-between border shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-cyan-500/10 sm:min-h-36 ${containerClass(tone)}`}
+      className={`state-enter card flex h-full min-h-32 flex-col justify-between border shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-cyan-500/10 sm:min-h-36 ${containerClass(tone)}`}
     >
       <p className="text-xs uppercase tracking-wide text-slate-400">{label}</p>
 

@@ -11,7 +11,7 @@ export function EmptyState({ title, description, variant = 'panel' }: EmptyState
 
   return (
     <div
-      className={`card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40 ${
+      className={`state-enter card border border-slate-700 bg-gradient-to-b from-slate-800/70 to-slate-900/40 ${
         isCompact ? 'min-h-32 sm:min-h-36' : 'min-h-[18rem] sm:min-h-[20rem]'
       }`}
     >

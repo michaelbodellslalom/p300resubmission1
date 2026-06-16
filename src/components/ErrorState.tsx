@@ -18,8 +18,8 @@ export function ErrorState({
       role="alert"
       className={
         isInline
-          ? 'rounded-lg border border-rose-500/60 bg-rose-500/10 p-4'
-          : 'card flex min-h-[18rem] flex-col justify-center gap-2 border border-rose-500/60 bg-rose-500/10 p-4 sm:min-h-[20rem] sm:p-5'
+          ? 'state-enter rounded-lg border border-rose-500/60 bg-rose-500/10 p-4'
+          : 'state-enter card flex min-h-[18rem] flex-col justify-center gap-2 border border-rose-500/60 bg-rose-500/10 p-4 sm:min-h-[20rem] sm:p-5'
       }
     >
       <p className="text-sm font-semibold text-rose-200">{message}</p>
