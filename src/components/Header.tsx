@@ -56,7 +56,7 @@ export function Header() {
             <button
               type="button"
               onClick={handleRefresh}
-              className="rounded-md border border-cyan-600 bg-cyan-600/20 px-3 py-2 text-sm font-semibold text-cyan-200 hover:bg-cyan-600/30"
+              className="min-h-11 rounded-md border border-cyan-600 bg-cyan-600/20 px-3.5 py-2 text-sm font-semibold text-cyan-200 hover:bg-cyan-600/30 sm:min-h-9 sm:px-3 sm:py-2"
             >
               {isRefreshing ? 'Refreshing' : 'Refresh'}
             </button>

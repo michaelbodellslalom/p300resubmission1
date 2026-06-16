@@ -37,7 +37,7 @@ export function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
           onClick={() => setIsMobileMenuOpen((open) => !open)}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-dashboard-sections"
-          className="rounded-md border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs font-semibold text-slate-200 hover:border-slate-500"
+          className="min-h-11 rounded-md border border-slate-700 bg-slate-900 px-3.5 py-2 text-sm font-semibold text-slate-200 hover:border-slate-500"
         >
           {isMobileMenuOpen ? 'Close' : 'Menu'}
         </button>

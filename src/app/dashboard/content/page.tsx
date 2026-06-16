@@ -102,7 +102,7 @@ export default function ContentPage() {
             key={opt.value}
             type="button"
             onClick={() => { setContentFormat(opt.value); setPage(0); }}
-            className={`rounded-md border px-3 py-1.5 text-xs font-semibold transition-colors ${
+            className={`min-h-11 rounded-md border px-3.5 py-2 text-sm font-semibold transition-colors sm:min-h-9 sm:px-3 sm:py-1.5 sm:text-xs ${
               activeFormat === opt.value
                 ? 'border-cyan-500 bg-cyan-500/20 text-cyan-200'
                 : 'border-slate-700 bg-slate-900 text-slate-300 hover:border-slate-500'
@@ -220,18 +220,18 @@ export default function ContentPage() {
                   type="button"
                   disabled={page === 0}
                   onClick={() => setPage((p) => p - 1)}
-                  className="rounded-md border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-slate-500 disabled:opacity-40"
+                  className="min-h-11 rounded-md border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-semibold text-slate-300 hover:border-slate-500 disabled:opacity-40 sm:min-h-9 sm:px-3 sm:py-1.5 sm:text-xs"
                 >
                   ← Prev
                 </button>
-                <span className="text-xs text-slate-400">
+                <span className="text-sm text-slate-400 sm:text-xs">
                   Page {page + 1} / {totalPages}
                 </span>
                 <button
                   type="button"
                   disabled={page >= totalPages - 1}
                   onClick={() => setPage((p) => p + 1)}
-                  className="rounded-md border border-slate-700 bg-slate-900 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:border-slate-500 disabled:opacity-40"
+                  className="min-h-11 rounded-md border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-semibold text-slate-300 hover:border-slate-500 disabled:opacity-40 sm:min-h-9 sm:px-3 sm:py-1.5 sm:text-xs"
                 >
                   Next →
                 </button>
