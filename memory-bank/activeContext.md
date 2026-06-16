@@ -4,7 +4,7 @@
 **Phase 8+ Cross-cutting** — All 6 tabs now functional
 
 ## Next Task
-**T-160: Set up performance monitoring**
+**T-161: Optimize database queries**
 
 ## What's Done
 - Planning complete (PRD, Design Doc, Build Task List)
@@ -72,13 +72,14 @@
 - T-157 complete: Lighthouse optimization pass added targeted chart code-splitting and package import optimization with production re-checks
 - T-158 complete: route-level code splitting expanded with dynamic chart imports on overview, subscribers, revenue, and insights routes
 - T-159 complete: dynamic import applied to CSV export library so Papa Parse loads only when export actions are invoked
+- T-160 complete: client-side performance monitoring added for web vitals and route-change timing with in-browser metric queueing
 - QueryClient provider wired at app root for hooks
 - Production build and type-check verified after shell routing
 - Production build and type-check verified after KPI refactor
 - Production build and type-check re-verified after chart integration
 
 ## What's In Progress
-- T-160 planning: lightweight performance monitoring hooks and baseline metric capture strategy
+- T-161 planning: query-path review and optimization strategy (mock data layer currently in use)
 
 ## Blockers
 None
@@ -89,6 +90,7 @@ None
 - Multi-tab dashboard architecture retained
 - Real-time polling remains planned for later phase
 - Header refresh timestamp is now hydration-safe and no longer intercepts pointer events
+- Runtime performance metrics are available at window.__dashboardPerfMetrics during active sessions
 
 ## Last Updated
-June 16, 2026 - T-159 complete; next T-160 performance monitoring
+June 16, 2026 - T-160 complete; next T-161 query optimization review
